@@ -1,0 +1,28 @@
+{
+  "name": "tetherlabs-agency",
+  "version": "1.0.0",
+  "description": "TetherLabs - Influencer Marketing for the Tech Ecosystem",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx serve . -l 3000",
+    "start": "npx serve . -l 3000",
+    "build": "echo 'Static site - no build process needed'",
+    "preview": "npx serve . -l 3000"
+  },
+  "keywords": [
+    "influencer-marketing",
+    "linkedin",
+    "b2b",
+    "saas",
+    "tech",
+    "marketing-agency"
+  ],
+  "author": "TetherLabs",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "serve": "^14.2.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
