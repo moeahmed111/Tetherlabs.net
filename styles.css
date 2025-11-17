@@ -1704,11 +1704,11 @@ body {
 }
 
 .logo-img {
-    height: 45px;
+    height: 55px;
     width: auto;
     object-fit: contain;
     transition: var(--transition);
-    filter: brightness(1);
+    background: #ffffff;
 }
 
 .navbar.scrolled .logo-img {
@@ -1716,7 +1716,7 @@ body {
 }
 
 .logo-img:hover {
-    transform: scale(1.05);
+    opacity: 0.85;
 }
 
 
@@ -3370,7 +3370,7 @@ body {
     }
     
     .logo-img {
-        height: 35px;
+        height: 40px;
     }
     
     .nav-menu {
