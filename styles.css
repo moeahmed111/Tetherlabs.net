@@ -1700,47 +1700,22 @@ body {
 .nav-logo {
     display: flex;
     align-items: center;
-    gap: 15px;
     position: relative;
 }
 
-.nav-logo h2 {
-    color: #000000;
-    font-weight: 700;
-    font-size: 1.6rem;
-    position: relative;
-    transition: var(--transition);
-}
-
-.navbar.scrolled .nav-logo h2 {
-    color: #ffffff;
-}
-
-.logo-image {
-    height: 40px;
+.logo-img {
+    height: 45px;
     width: auto;
-    max-width: 50px;
     object-fit: contain;
     transition: var(--transition);
-}
-
-.logo-text {
-    color: #000000;
-    font-weight: 700;
-    font-size: 1.6rem;
-    margin: 0;
-    transition: var(--transition);
-}
-
-.navbar.scrolled .logo-text {
-    color: #ffffff;
-}
-
-.navbar.scrolled .logo-image {
     filter: brightness(1);
 }
 
-.logo-image:hover {
+.navbar.scrolled .logo-img {
+    filter: brightness(0) invert(1);
+}
+
+.logo-img:hover {
     transform: scale(1.05);
 }
 
@@ -3394,13 +3369,8 @@ body {
         font-size: 1.4rem;
     }
     
-    .logo-image {
+    .logo-img {
         height: 35px;
-        max-width: 40px;
-    }
-    
-    .logo-text {
-        font-size: 1.4rem;
     }
     
     .nav-menu {
