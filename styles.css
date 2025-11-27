@@ -2880,9 +2880,21 @@ body {
     margin-bottom: 1.5rem;
 }
 
-/* Desktop: Hide accordion buttons, show regular layout */
+/* Desktop: Show titles but hide accordion functionality */
 @media (min-width: 768px) {
     .accordion-header {
+        display: block;
+        padding: 0;
+        cursor: default;
+        pointer-events: none;
+    }
+    
+    .accordion-header h3 {
+        display: block;
+        padding: 0;
+    }
+    
+    .accordion-icon {
         display: none;
     }
 
@@ -2890,6 +2902,7 @@ body {
         max-height: none;
         overflow: visible;
         padding: 0;
+        display: block;
     }
 }
 
