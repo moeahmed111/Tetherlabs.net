@@ -3979,6 +3979,11 @@ body {
         padding-left: 1rem;
         padding-right: 0.5rem;
         color: #4B5563;
+        position: relative;
+    }
+    
+    .step-deliverables li::before {
+        top: 0.35em;
     }
 
     /* About / Why TetherLabs */
