@@ -2835,6 +2835,8 @@ body {
     display: flex;
     gap: 2rem;
     align-items: flex-start;
+    border: none;
+    background: transparent;
 }
 
 .process-step:last-child {
