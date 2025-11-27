@@ -2884,18 +2884,33 @@ body {
 @media (min-width: 768px) {
     .accordion-header {
         display: block;
+        background: none;
+        border: none;
         padding: 0;
+        margin: 0;
         cursor: default;
         pointer-events: none;
+        text-align: left;
+        width: auto;
+    }
+    
+    .accordion-header::before {
+        display: none;
     }
     
     .accordion-header h3 {
-        display: block;
         padding: 0;
+        margin-bottom: 0.8rem;
+        font-size: 1.6rem;
+        background: none;
     }
     
     .accordion-icon {
         display: none;
+    }
+    
+    .step-content > h3:first-child {
+        display: block;
     }
 
     .accordion-content {
@@ -2903,6 +2918,16 @@ body {
         overflow: visible;
         padding: 0;
         display: block;
+    }
+    
+    .step-number {
+        display: flex !important;
+    }
+    
+    .process-step:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        border-color: #0891b2;
     }
 }
 
@@ -3878,11 +3903,16 @@ body {
         border: 1px solid #E5E7EB;
         border-radius: 12px;
         overflow: hidden;
-        display: flex;
-        align-items: flex-start;
+        display: block;
         width: 94%;
         max-width: 94%;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+    }
+    
+    .process-step:hover {
+        box-shadow: 0 4px 16px rgba(8, 145, 178, 0.15);
+        border-color: #0891b2;
     }
     
     .process-step:last-child {
@@ -3890,12 +3920,7 @@ body {
     }
 
     .step-number {
-        position: static;
-        width: 50px;
-        height: 50px;
-        font-size: 1.3rem;
-        margin: 2rem 1.25rem 2rem 1.5rem;
-        flex-shrink: 0;
+        display: none;
     }
     
     .step-content {
@@ -3911,10 +3936,29 @@ body {
         width: 100%;
         background: transparent;
         border: none;
-        padding: 2rem 1.75rem 2rem 0.75rem;
+        padding: 2rem 2rem;
         cursor: pointer;
         text-align: left;
         -webkit-tap-highlight-color: rgba(8, 145, 178, 0.1);
+        position: relative;
+    }
+    
+    .accordion-header::before {
+        content: attr(data-number);
+        position: absolute;
+        left: 2rem;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 32px;
+        height: 32px;
+        background: #0891b2;
+        color: #ffffff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.1rem;
+        font-weight: 700;
     }
     
     .accordion-header h3 {
@@ -3924,13 +3968,14 @@ body {
         flex: 1;
         color: #111827;
         font-weight: 700;
-        padding-right: 0.75rem;
+        padding-left: 3rem;
+        padding-right: 1rem;
     }
     
     .accordion-icon {
-        font-size: 2rem;
+        font-size: 1.75rem;
         color: #0891b2;
-        font-weight: 400;
+        font-weight: 600;
         width: 36px;
         height: 36px;
         display: flex;
@@ -3945,19 +3990,19 @@ body {
     }
     
     .accordion-header.active .accordion-icon {
-        transform: rotate(45deg);
+        transform: rotate(180deg);
     }
     
     .accordion-content {
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.4s ease;
-        padding: 0 1.75rem 0 0.75rem;
+        padding: 0 2rem;
     }
     
     .accordion-content.active {
         max-height: 1000px;
-        padding: 0 1.75rem 2rem 0.75rem;
+        padding: 0 2rem 2rem 2rem;
     }
     
     .accordion-content p {
@@ -3965,14 +4010,14 @@ body {
         line-height: 1.85;
         margin-bottom: 1.5rem;
         color: #4B5563;
-        padding-left: 0.75rem;
-        padding-right: 0.75rem;
+        padding-left: 0;
+        padding-right: 0;
     }
     
     .step-deliverables {
         margin-top: 2rem;
-        padding-left: 0.75rem;
-        padding-right: 1rem;
+        padding-left: 0;
+        padding-right: 0;
     }
     
     .step-deliverables strong {
@@ -3984,7 +4029,7 @@ body {
     }
     
     .step-deliverables ul {
-        padding-left: 3rem;
+        padding-left: 2rem;
         margin-top: 1rem;
     }
     
@@ -3992,14 +4037,15 @@ body {
         font-size: 1rem;
         line-height: 1.9;
         margin-bottom: 1.25rem;
-        padding-left: 1rem;
-        padding-right: 0.5rem;
+        padding-left: 1.25rem;
+        padding-right: 0;
         color: #4B5563;
         position: relative;
     }
     
     .step-deliverables li::before {
         top: 0.35em;
+        left: -0.5rem;
     }
 
     /* About / Why TetherLabs */
