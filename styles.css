@@ -2883,38 +2883,50 @@ body {
 /* Desktop: Show titles but hide accordion functionality */
 @media (min-width: 768px) {
     .accordion-header {
+        all: unset;
         display: block;
-        background: none !important;
-        border: none !important;
+        background: transparent;
+        border: 0;
         padding: 0;
         margin: 0;
         cursor: default;
         pointer-events: none;
         text-align: left;
-        width: auto;
+        width: 100%;
+        font-family: inherit;
+        color: inherit;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+    }
+    
+    .accordion-header:hover,
+    .accordion-header:focus,
+    .accordion-header:active {
+        background: transparent !important;
+        border: none !important;
         outline: none !important;
         box-shadow: none !important;
     }
     
-    .accordion-header:hover {
-        background: none !important;
-        border: none !important;
-        outline: none !important;
-    }
-    
     .accordion-header::before {
-        display: none;
+        display: none !important;
     }
     
     .accordion-header h3 {
+        all: unset;
+        display: block;
         padding: 0;
-        margin-bottom: 0.8rem;
+        margin: 0 0 0.8rem 0;
         font-size: 1.6rem;
-        background: none !important;
+        font-weight: 700;
+        color: #111827;
+        font-family: 'Inter', sans-serif;
+        line-height: 1.4;
     }
     
     .accordion-icon {
-        display: none;
+        display: none !important;
     }
     
     .step-content > h3:first-child {
