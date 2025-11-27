@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initMobileMenu();
     initScrollAnimations();
     initCounterAnimations();
+    initAccordion();
 });
 
 // Navigation functionality
@@ -162,5 +163,47 @@ function initCounterAnimations() {
             const moveAmount = scrollY * 0.1;
             metricsDisplay.style.transform = `translateY(${moveAmount}px)`;
         }
+    });
+}
+
+// Accordion functionality for "How We Drive Results" on mobile
+function initAccordion() {
+    // Only run on mobile devices (767px and below)
+    if (window.innerWidth > 767) return;
+    
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
+    
+    accordionHeaders.forEach(header => {
+        header.addEventListener('click', function() {
+            const content = this.nextElementSibling;
+            const isActive = this.classList.contains('active');
+            
+            // Close all accordions
+            accordionHeaders.forEach(h => {
+                h.classList.remove('active');
+                h.nextElementSibling.classList.remove('active');
+            });
+            
+            // If this wasn't active, open it
+            if (!isActive) {
+                this.classList.add('active');
+                content.classList.add('active');
+            }
+        });
+    });
+    
+    // Reinitialize on window resize
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            if (window.innerWidth > 767) {
+                // Remove all active classes on desktop
+                accordionHeaders.forEach(h => {
+                    h.classList.remove('active');
+                    h.nextElementSibling.classList.remove('active');
+                });
+            }
+        }, 250);
     });
 }
