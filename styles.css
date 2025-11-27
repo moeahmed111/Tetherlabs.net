@@ -2881,14 +2881,16 @@ body {
 }
 
 /* Desktop: Hide accordion buttons, show regular layout */
-.accordion-header {
-    display: none;
-}
+@media (min-width: 768px) {
+    .accordion-header {
+        display: none;
+    }
 
-.accordion-content {
-    max-height: none !important;
-    overflow: visible !important;
-    padding: 0 !important;
+    .accordion-content {
+        max-height: none;
+        overflow: visible;
+        padding: 0;
+    }
 }
 
 .step-deliverables {
