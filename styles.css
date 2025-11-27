@@ -2829,6 +2829,10 @@ body {
     position: relative;
 }
 
+.process-timeline::before {
+    display: none !important;
+}
+
 .process-step {
     margin-bottom: 4rem;
     position: relative;
@@ -2837,6 +2841,11 @@ body {
     align-items: flex-start;
     border: none;
     background: transparent;
+}
+
+.process-step::before,
+.process-step::after {
+    display: none !important;
 }
 
 .process-step:last-child {
@@ -2863,6 +2872,11 @@ body {
     background: #ffffff;
     padding: 0;
     padding-left: 2rem;
+}
+
+.step-content::before,
+.step-content::after {
+    display: none !important;
 }
 
 .step-content h3 {
