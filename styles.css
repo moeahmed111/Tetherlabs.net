@@ -3782,6 +3782,11 @@ body {
         margin-top: -5px;
     }
     
+    .footer-logo h3 {
+        margin-top: 0;
+        line-height: 1;
+    }
+    
     .footer-brand p {
         font-size: 0.9rem;
         line-height: 1.7;
