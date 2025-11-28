@@ -3309,6 +3309,7 @@ body {
     height: 65px;
     width: 65px;
     display: block;
+    margin-top: -3px;
 }
 
 .footer-logo h3 {
