@@ -3318,7 +3318,7 @@ body {
 
 .footer-brand p {
     color: #4B5563;
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     line-height: 1.6;
 }
 
@@ -3330,7 +3330,7 @@ body {
 
 .footer-column h4 {
     color: #111827;
-    font-size: 0.75rem;
+    font-size: 0.85rem;
     font-weight: 700;
     letter-spacing: 0.1em;
     margin: 0 0 0.5rem 0;
@@ -3341,7 +3341,7 @@ body {
     color: #4B5563;
     text-decoration: none;
     transition: color 0.3s ease;
-    font-size: 0.95rem;
+    font-size: 1.05rem;
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -3357,7 +3357,7 @@ body {
 
 .footer-column p {
     color: #4B5563;
-    font-size: 0.95rem;
+    font-size: 1.05rem;
     margin: 0;
 }
 
@@ -3367,7 +3367,7 @@ body {
 
 .footer-bottom p {
     color: #6B7280;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
 }
 
 .footer-bottom a {
