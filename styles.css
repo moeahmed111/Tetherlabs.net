@@ -1730,8 +1730,8 @@ body {
 }
 
 .logo-icon {
-    height: 120px;
-    width: 120px;
+    height: 80px;
+    width: 80px;
     display: block;
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
