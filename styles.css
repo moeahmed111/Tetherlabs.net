@@ -3757,6 +3757,49 @@ body {
         margin-left: -12px;
     }
     
+    /* Footer Mobile Optimization */
+    .footer {
+        padding: 60px 0 30px;
+    }
+    
+    .footer-brand {
+        margin-bottom: 2.5rem;
+        text-align: center;
+    }
+    
+    .footer-logo {
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+    
+    .footer-brand p {
+        font-size: 1rem;
+        line-height: 1.6;
+        max-width: 100%;
+        text-align: center;
+    }
+    
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .footer-column {
+        align-items: center;
+    }
+    
+    .footer-bottom {
+        padding-top: 2rem;
+        margin-top: 2rem;
+        border-top: 1px solid #E5E7EB;
+    }
+    
+    .footer-bottom p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+    
     .logo-image {
         width: 140px !important;
         height: auto !important;
