@@ -3777,6 +3777,10 @@ body {
         margin-bottom: 1rem;
     }
     
+    .footer-logo-icon {
+        margin-top: -2px;
+    }
+    
     .footer-brand p {
         font-size: 0.9rem;
         line-height: 1.7;
