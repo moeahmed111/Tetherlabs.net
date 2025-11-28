@@ -3298,6 +3298,24 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 0.5rem;
+}
+
+.footer-logo-icon {
+    height: 50px;
+    width: 50px;
+    display: block;
+}
+
+.footer-logo h3 {
+    margin: 0;
+    margin-left: -10px;
+}
+
 .footer-brand p {
     color: #4B5563;
     font-size: 0.95rem;
