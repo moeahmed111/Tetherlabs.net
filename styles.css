@@ -1721,7 +1721,7 @@ body {
 
 .logo-text {
     margin: 0;
-    margin-left: -15px;
+    margin-left: -20px;
     line-height: 1;
     font-size: 28px;
     font-weight: 700;
@@ -1730,8 +1730,8 @@ body {
 }
 
 .logo-icon {
-    height: 80px;
-    width: 80px;
+    height: 95px;
+    width: 95px;
     display: block;
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
