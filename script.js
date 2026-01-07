@@ -166,44 +166,22 @@ function initCounterAnimations() {
     });
 }
 
-// Accordion functionality for "How We Drive Results" on mobile
+// Toggle Read More for service descriptions on mobile
+function toggleReadMore(button) {
+    const description = button.previousElementSibling;
+    const isExpanded = description.classList.contains('expanded');
+    
+    if (isExpanded) {
+        description.classList.remove('expanded');
+        button.textContent = 'Read more';
+    } else {
+        description.classList.add('expanded');
+        button.textContent = 'Read less';
+    }
+}
+
+// Accordion functionality - disabled on mobile (content always visible)
 function initAccordion() {
-    // Only run on mobile devices (767px and below)
-    if (window.innerWidth > 767) return;
-    
-    const accordionHeaders = document.querySelectorAll('.accordion-header');
-    
-    accordionHeaders.forEach(header => {
-        header.addEventListener('click', function() {
-            const content = this.nextElementSibling;
-            const isActive = this.classList.contains('active');
-            
-            // Close all accordions
-            accordionHeaders.forEach(h => {
-                h.classList.remove('active');
-                h.nextElementSibling.classList.remove('active');
-            });
-            
-            // If this wasn't active, open it
-            if (!isActive) {
-                this.classList.add('active');
-                content.classList.add('active');
-            }
-        });
-    });
-    
-    // Reinitialize on window resize
-    let resizeTimer;
-    window.addEventListener('resize', () => {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(() => {
-            if (window.innerWidth > 767) {
-                // Remove all active classes on desktop
-                accordionHeaders.forEach(h => {
-                    h.classList.remove('active');
-                    h.nextElementSibling.classList.remove('active');
-                });
-            }
-        }, 250);
-    });
+    // No accordion behavior needed - all content is visible by default
+    return;
 }
