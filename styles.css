@@ -4043,12 +4043,12 @@ body {
     /* Hero Section */
     .hero {
         min-height: auto;
-        padding: 90px 0 50px;
+        padding: 115px 0 50px;
     }
     
     .hero-container {
         gap: 1.5rem;
-        padding: 0 8px;
+        padding: 0 20px;
     }
 
     .hero-title {
@@ -4513,13 +4513,17 @@ body {
     }
     
     .footer-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         gap: 1.5rem;
         padding: 0 20px;
+        text-align: center;
+    }
+    
+    .footer-column {
+        align-items: center;
     }
     
     .footer-brand {
-        grid-column: 1 / -1;
         text-align: center;
         max-width: 100%;
         padding: 0;
