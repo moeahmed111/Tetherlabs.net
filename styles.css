@@ -3600,55 +3600,55 @@ body {
     }
 
     .nav-menu {
-        position: fixed;
-        top: 0;
+        position: absolute;
+        top: 100%;
         left: 0;
         right: 0;
-        bottom: 0;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
         background-color: #ffffff;
         width: 100%;
-        height: 100vh;
         text-align: center;
         transition: 0.3s ease;
-        padding: 2rem;
+        padding: 1rem 0 1.5rem;
         opacity: 0;
         visibility: hidden;
-        z-index: 999;
+        transform: translateY(-10px);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        border-top: 1px solid #E5E7EB;
     }
 
     .nav-menu.active {
         opacity: 1;
         visibility: visible;
+        transform: translateY(0);
     }
 
     .nav-menu li {
-        margin: 1rem 0;
+        margin: 0;
     }
     
     .nav-link {
         color: #111827;
-        font-size: 1.5rem;
-        font-weight: 600;
-        padding: 1rem 2rem;
+        font-size: 1rem;
+        font-weight: 500;
+        padding: 0.875rem 1.5rem;
         transition: var(--transition);
         display: block;
     }
     
     .nav-link:hover {
         color: #0891b2;
+        background: #F9FAFB;
     }
     
     .nav-link.cta-button {
         background: #0891b2;
         color: #ffffff;
-        margin-top: 1.5rem;
-        padding: 16px 32px;
-        border-radius: 10px;
+        margin: 0.75rem 1.5rem 0;
+        padding: 12px 24px;
+        border-radius: 8px;
         text-align: center;
-        font-size: 1.1rem;
+        font-size: 0.95rem;
     }
     
     .nav-link.cta-button:hover {
@@ -4038,12 +4038,12 @@ body {
     }
     
     .nav-link {
-        font-size: 1.4rem;
+        font-size: 1rem;
     }
     
     .nav-link.cta-button {
-        padding: 14px 28px;
-        font-size: 1rem;
+        padding: 12px 24px;
+        font-size: 0.95rem;
     }
 
     /* Hero Section */
