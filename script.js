@@ -10,52 +10,43 @@ document.addEventListener('DOMContentLoaded', function() {
     initStickyProgressLine();
 });
 
-// Smooth progress line for How We Drive Results (mobile)
+// Highlight steps on scroll for How We Drive Results (mobile)
 function initStickyProgressLine() {
-    const section = document.querySelector('.process-timeline-section');
-    const timeline = document.querySelector('.process-timeline');
-    if (!section || !timeline) return;
+    const steps = document.querySelectorAll('.process-step');
+    if (!steps.length) return;
     
     // Only on mobile
     if (window.innerWidth > 768) return;
     
-    function updateProgress() {
-        const rect = section.getBoundingClientRect();
-        const sectionTop = rect.top;
-        const sectionHeight = rect.height;
+    function updateStepHighlights() {
         const windowHeight = window.innerHeight;
+        const triggerPoint = windowHeight * 0.6; // 60% from top
         
-        // Calculate how much of the section has been scrolled through
-        // Start when section enters viewport, end when it leaves
-        const scrollStart = windowHeight * 0.8; // Start earlier
-        const scrollEnd = -sectionHeight + windowHeight * 0.2; // End later
-        
-        let progress = 0;
-        
-        if (sectionTop <= scrollStart && sectionTop >= scrollEnd) {
-            // Calculate progress from 0 to 100
-            const totalScrollDistance = scrollStart - scrollEnd;
-            const currentScroll = scrollStart - sectionTop;
-            progress = Math.min(100, Math.max(0, (currentScroll / totalScrollDistance) * 100));
-        } else if (sectionTop < scrollEnd) {
-            progress = 100;
-        }
-        
-        timeline.style.setProperty('--progress-height', progress + '%');
+        steps.forEach(step => {
+            const rect = step.getBoundingClientRect();
+            const stepMiddle = rect.top + (rect.height / 2);
+            
+            // Highlight if step is near the middle of viewport
+            if (stepMiddle < triggerPoint && stepMiddle > windowHeight * 0.2) {
+                step.classList.add('in-view');
+            } else {
+                step.classList.remove('in-view');
+            }
+        });
     }
     
-    // Update on scroll with smooth animation
-    window.addEventListener('scroll', updateProgress, { passive: true });
+    // Update on scroll
+    window.addEventListener('scroll', updateStepHighlights, { passive: true });
     
     // Initial check
-    updateProgress();
+    updateStepHighlights();
     
     // Re-check on resize
     window.addEventListener('resize', () => {
         if (window.innerWidth > 768) {
-            timeline.style.setProperty('--progress-height', '0%');
+            steps.forEach(step => step.classList.remove('in-view'));
         } else {
-            updateProgress();
+            updateStepHighlights();
         }
     });
 }
