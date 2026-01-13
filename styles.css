@@ -4948,22 +4948,27 @@ body {
         0 0 0 4px rgba(59, 130, 246, 0.1);
 }
 
+/* Deliver step - green checkmark by default */
 .node-final .node-circle {
-    border-color: #10b981;
-    color: #10b981;
-    background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
-    box-shadow: 
-        0 4px 16px rgba(16, 185, 129, 0.2),
-        inset 0 -2px 8px rgba(16, 185, 129, 0.05);
-}
-
-.node-final:hover .node-circle {
     background: linear-gradient(135deg, #10b981 0%, #059669 100%);
     border-color: #059669;
     color: #ffffff;
     box-shadow: 
-        0 12px 32px rgba(16, 185, 129, 0.35),
-        0 0 0 4px rgba(16, 185, 129, 0.1);
+        0 6px 20px rgba(16, 185, 129, 0.3),
+        0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.node-final .node-circle svg {
+    stroke: #ffffff;
+}
+
+.node-final:hover .node-circle {
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    border-color: #047857;
+    box-shadow: 
+        0 12px 32px rgba(16, 185, 129, 0.4),
+        0 0 0 4px rgba(16, 185, 129, 0.15);
+    transform: scale(1.05);
 }
 
 .node-info {
