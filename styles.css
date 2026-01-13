@@ -5239,14 +5239,14 @@ body {
 }
 
 .step-number {
-    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+    background: linear-gradient(135deg, #0891b2 0%, #0e7490 100%);
+    box-shadow: 0 4px 12px rgba(8, 145, 178, 0.25);
     transition: all 0.3s ease;
 }
 
 .process-step:hover .step-number {
     transform: scale(1.05);
-    box-shadow: 0 6px 16px rgba(59, 130, 246, 0.3);
+    box-shadow: 0 6px 16px rgba(8, 145, 178, 0.3);
 }
 
 /* Enhanced Services Section */
