@@ -10,25 +10,54 @@ document.addEventListener('DOMContentLoaded', function() {
     initStickyProgressLine();
 });
 
-// Sticky progress line for How We Drive Results (mobile)
+// Smooth progress line for How We Drive Results (mobile)
 function initStickyProgressLine() {
     const section = document.querySelector('.process-timeline-section');
-    if (!section) return;
+    const timeline = document.querySelector('.process-timeline');
+    if (!section || !timeline) return;
     
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                section.classList.add('in-view');
-            } else {
-                section.classList.remove('in-view');
-            }
-        });
-    }, {
-        threshold: 0.1,
-        rootMargin: '-50px 0px'
+    // Only on mobile
+    if (window.innerWidth > 768) return;
+    
+    function updateProgress() {
+        const rect = section.getBoundingClientRect();
+        const sectionTop = rect.top;
+        const sectionHeight = rect.height;
+        const windowHeight = window.innerHeight;
+        
+        // Calculate how much of the section has been scrolled through
+        // Start when section enters viewport, end when it leaves
+        const scrollStart = windowHeight * 0.8; // Start earlier
+        const scrollEnd = -sectionHeight + windowHeight * 0.2; // End later
+        
+        let progress = 0;
+        
+        if (sectionTop <= scrollStart && sectionTop >= scrollEnd) {
+            // Calculate progress from 0 to 100
+            const totalScrollDistance = scrollStart - scrollEnd;
+            const currentScroll = scrollStart - sectionTop;
+            progress = Math.min(100, Math.max(0, (currentScroll / totalScrollDistance) * 100));
+        } else if (sectionTop < scrollEnd) {
+            progress = 100;
+        }
+        
+        timeline.style.setProperty('--progress-height', progress + '%');
+    }
+    
+    // Update on scroll with smooth animation
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    
+    // Initial check
+    updateProgress();
+    
+    // Re-check on resize
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+            timeline.style.setProperty('--progress-height', '0%');
+        } else {
+            updateProgress();
+        }
     });
-    
-    observer.observe(section);
 }
 
 // Navigation functionality

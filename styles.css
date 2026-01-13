@@ -5310,7 +5310,7 @@ body {
         font-size: 0.8125rem;
     }
     
-    /* Mobile: Sticky progress line for How We Drive Results */
+    /* Mobile: Progress line for How We Drive Results */
     .process-timeline-section {
         position: relative;
     }
@@ -5322,26 +5322,34 @@ body {
     
     .process-timeline {
         position: relative;
-        padding-left: 20px;
+        padding-left: 24px;
     }
     
+    /* Static track line (gray background) */
     .process-timeline::before {
         content: '';
-        position: fixed;
-        left: 20px;
-        top: 50%;
-        transform: translateY(-50%);
+        position: absolute;
+        left: 6px;
+        top: 0;
+        bottom: 0;
         width: 3px;
-        height: 120px;
-        background: linear-gradient(180deg, #0891b2 0%, #06b6d4 50%, #10b981 100%);
+        background: #e0f2fe;
         border-radius: 2px;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        z-index: 50;
+        z-index: 1;
     }
     
-    .process-timeline-section.in-view .process-timeline::before {
-        opacity: 1;
+    /* Animated progress line (teal fill) */
+    .process-timeline::after {
+        content: '';
+        position: absolute;
+        left: 6px;
+        top: 0;
+        width: 3px;
+        height: var(--progress-height, 0%);
+        background: linear-gradient(180deg, #0891b2 0%, #06b6d4 50%, #10b981 100%);
+        border-radius: 2px;
+        z-index: 2;
+        transition: height 0.1s ease-out;
     }
     
     .intelligence-context {
