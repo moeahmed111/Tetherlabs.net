@@ -5184,10 +5184,18 @@ body {
         display: none !important;
     }
     
-    /* Reduce white gap between hero and intelligence */
+    /* Mobile Campaign Intelligence spacing */
     .intelligence-flow-section {
         margin-top: 0 !important;
-        padding-top: 30px !important;
+        padding-top: 50px !important;
+    }
+    
+    .intelligence-flow-section .section-header {
+        margin-bottom: 24px;
+    }
+    
+    .intelligence-flow-section .section-header h2 {
+        margin-bottom: 8px;
     }
     
     .flow-track {
@@ -5232,32 +5240,48 @@ body {
         font-size: 0.8125rem;
     }
     
-    /* Mobile tooltips - compact inline style */
+    /* Mobile: Hide tooltips completely - just show icons */
     .node-tooltip {
-        position: absolute;
-        top: calc(100% + 8px);
-        left: 50%;
-        transform: translateX(-50%) translateY(4px);
-        max-width: 180px;
-        min-width: 140px;
-        width: auto;
-        padding: 8px 10px;
-        font-size: 0.75rem;
-        z-index: 100;
+        display: none !important;
     }
     
-    .node-tooltip p {
-        font-size: 0.75rem;
-        line-height: 1.4;
+    .node-circle {
+        pointer-events: none;
+        cursor: default;
     }
     
-    .flow-node.tooltip-active .node-tooltip {
-        transform: translateX(-50%) translateY(0);
+    /* Mobile: Sticky progress line for How We Drive Results */
+    .process-timeline-section {
+        position: relative;
     }
     
-    .tooltip-arrow {
-        display: block;
-        border-width: 6px;
+    .process-timeline-section::before,
+    .process-timeline-section::after {
+        display: none !important;
+    }
+    
+    .process-timeline {
+        position: relative;
+        padding-left: 20px;
+    }
+    
+    .process-timeline::before {
+        content: '';
+        position: fixed;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 3px;
+        height: 120px;
+        background: linear-gradient(180deg, #0891b2 0%, #06b6d4 50%, #10b981 100%);
+        border-radius: 2px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 50;
+    }
+    
+    .process-timeline-section.in-view .process-timeline::before {
+        opacity: 1;
     }
     
     .intelligence-context {

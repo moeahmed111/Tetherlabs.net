@@ -7,7 +7,29 @@ document.addEventListener('DOMContentLoaded', function() {
     initCounterAnimations();
     initAccordion();
     initIntelligenceFlow();
+    initStickyProgressLine();
 });
+
+// Sticky progress line for How We Drive Results (mobile)
+function initStickyProgressLine() {
+    const section = document.querySelector('.process-timeline-section');
+    if (!section) return;
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                section.classList.add('in-view');
+            } else {
+                section.classList.remove('in-view');
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '-50px 0px'
+    });
+    
+    observer.observe(section);
+}
 
 // Navigation functionality
 function initNavigation() {
