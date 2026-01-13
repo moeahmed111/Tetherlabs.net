@@ -4793,9 +4793,9 @@ body {
 
 /* Flow Visual Container */
 .intelligence-flow {
-    max-width: 950px;
+    max-width: 1050px;
     margin: 0 auto 48px;
-    padding: 40px 30px;
+    padding: 40px 24px;
     position: relative;
     background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(10px);
@@ -4808,8 +4808,8 @@ body {
 .flow-track {
     position: absolute;
     top: 50%;
-    left: 80px;
-    right: 80px;
+    left: 60px;
+    right: 60px;
     height: 6px;
     background: rgba(226, 232, 240, 0.8);
     border-radius: 3px;
@@ -4858,8 +4858,8 @@ body {
 }
 
 .node-circle {
-    width: 72px;
-    height: 72px;
+    width: 66px;
+    height: 66px;
     background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
     border: 3px solid #3b82f6;
     border-radius: 50%;
