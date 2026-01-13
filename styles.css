@@ -1963,7 +1963,7 @@ body {
 .hero-title {
     font-size: 3.8rem;
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 1.15;
     margin-bottom: 1.5rem;
     color: #111827;
     position: relative;
@@ -1971,6 +1971,14 @@ body {
     opacity: 0;
     animation: fadeInUp 0.8s ease-out 0.2s forwards;
     font-family: 'Inter', sans-serif;
+}
+
+.hero-title-sub {
+    display: block;
+    font-size: 0.85em;
+    font-weight: 600;
+    color: #0891b2;
+    margin-top: 0.1em;
 }
 
 .hero-title::after {
@@ -4827,19 +4835,21 @@ body {
 }
 
 .intelligence-subtitle {
-    font-size: 1.125rem;
-    color: #475569;
-    max-width: 450px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #0f172a;
+    max-width: 500px;
     margin: 0 auto;
-    line-height: 1.6;
+    line-height: 1.5;
 }
 
 .intelligence-context {
-    font-size: 1rem;
-    color: #6b7280;
+    font-size: 1.0625rem;
+    color: #475569;
     text-align: center;
-    margin-top: 12px;
+    margin-top: 16px;
     margin-bottom: 8px;
+    font-weight: 500;
 }
 
 /* Flow Visual Container */
@@ -5236,6 +5246,22 @@ body {
 
 .process-step {
     position: relative;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.step-content {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-left: 3px solid #e0f2fe !important;
+    padding-left: 2rem !important;
+    margin-left: 0.5rem;
+}
+
+.process-step:hover .step-content {
+    border-left-color: #0891b2 !important;
 }
 
 .step-number {
