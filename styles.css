@@ -4966,6 +4966,13 @@ body {
         0 0 0 4px rgba(16, 185, 129, 0.1);
 }
 
+.node-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
 .node-label {
     font-size: 0.8125rem;
     font-weight: 600;
@@ -5202,34 +5209,97 @@ body {
         display: none;
     }
     
+    /* Mobile: Vertical list layout for flow nodes */
     .flow-nodes {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 0;
     }
     
     .flow-node {
-        width: calc(33.33% - 14px);
-        min-width: 85px;
+        width: 100%;
+        min-width: unset;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 16px 0;
+        border-bottom: 1px solid rgba(8, 145, 178, 0.1);
+    }
+    
+    .flow-node:last-child {
+        border-bottom: none;
     }
     
     .node-circle {
-        width: 56px;
-        height: 56px;
+        width: 48px;
+        height: 48px;
+        flex-shrink: 0;
+        background: linear-gradient(135deg, #0891b2 0%, #0e7490 100%);
+        color: white;
     }
     
     .node-circle svg {
-        width: 24px;
-        height: 24px;
+        width: 22px;
+        height: 22px;
+        stroke: white;
+    }
+    
+    /* Mobile: node-info wrapper */
+    .node-info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        flex: 1;
     }
     
     .node-label {
-        font-size: 0.6875rem;
-        text-align: center;
+        font-size: 1rem;
+        font-weight: 600;
+        color: #1a1a1a;
+        text-align: left;
+        margin-top: 0;
+        text-transform: none;
+        letter-spacing: 0;
+    }
+    
+    /* Show tooltip content as inline description */
+    .node-tooltip {
+        display: block !important;
+        position: static !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        margin-top: 4px;
+        max-width: none;
+        min-width: unset;
+    }
+    
+    .node-tooltip p {
+        font-size: 0.875rem;
+        color: #6b7280;
+        line-height: 1.5;
+        text-align: left;
+        margin: 0;
+    }
+    
+    .tooltip-arrow {
+        display: none !important;
+    }
+    
+    .node-circle {
+        pointer-events: none;
+        cursor: default;
     }
     
     .intelligence-badges {
         gap: 10px;
+        margin-top: 24px;
     }
     
     .intel-badge {
@@ -5238,16 +5308,6 @@ body {
     
     .intel-badge span:last-child {
         font-size: 0.8125rem;
-    }
-    
-    /* Mobile: Hide tooltips completely - just show icons */
-    .node-tooltip {
-        display: none !important;
-    }
-    
-    .node-circle {
-        pointer-events: none;
-        cursor: default;
     }
     
     /* Mobile: Sticky progress line for How We Drive Results */
