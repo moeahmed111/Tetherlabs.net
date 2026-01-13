@@ -4838,22 +4838,49 @@ body {
     letter-spacing: -0.02em;
 }
 
+/* Enhanced subtitle with gradient text */
 .intelligence-subtitle {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #0f172a;
-    max-width: 500px;
+    font-size: 1.35rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #0891b2 0%, #0e7490 50%, #10b981 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    max-width: 550px;
     margin: 0 auto;
-    line-height: 1.5;
+    line-height: 1.4;
+    letter-spacing: -0.02em;
 }
 
+/* Context line with visual accent */
 .intelligence-context {
     font-size: 1.0625rem;
-    color: #475569;
+    color: #1e293b;
     text-align: center;
-    margin-top: 16px;
-    margin-bottom: 8px;
+    margin-top: 20px;
+    margin-bottom: 12px;
     font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+}
+
+.intelligence-context::before {
+    content: '';
+    width: 24px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #0891b2);
+    border-radius: 1px;
+}
+
+.intelligence-context::after {
+    content: '';
+    width: 24px;
+    height: 2px;
+    background: linear-gradient(90deg, #0891b2, transparent);
+    border-radius: 1px;
 }
 
 /* Flow Visual Container */
