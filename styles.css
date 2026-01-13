@@ -4896,16 +4896,15 @@ body {
     box-shadow: 0 8px 32px rgba(59, 130, 246, 0.1);
 }
 
-/* Track/Line */
+/* Track/Line - positioned through center of circles */
 .flow-track {
     position: absolute;
-    top: 50%;
+    top: 36px;
     left: 60px;
     right: 60px;
-    height: 6px;
+    height: 4px;
     background: rgba(226, 232, 240, 0.8);
-    border-radius: 3px;
-    transform: translateY(-50%);
+    border-radius: 2px;
     z-index: 1;
     overflow: hidden;
 }
@@ -5084,13 +5083,13 @@ body {
     pointer-events: auto;
 }
 
-/* Simple Intelligence Badges */
+/* Intelligence Badges - Card Style */
 .intelligence-badges {
     display: flex;
     justify-content: center;
-    gap: 16px;
+    gap: 20px;
     flex-wrap: wrap;
-    max-width: 700px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
     position: relative;
@@ -5099,25 +5098,49 @@ body {
 
 .intel-badge {
     display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 12px 20px;
-    background: rgba(255, 255, 255, 0.9);
+    align-items: flex-start;
+    gap: 14px;
+    padding: 20px 24px;
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.9);
-    border-radius: 100px;
+    border: 1px solid rgba(8, 145, 178, 0.1);
+    border-radius: 16px;
     box-shadow: 0 2px 12px rgba(59, 130, 246, 0.08);
     transition: all 0.2s ease;
+    flex: 1;
+    min-width: 280px;
+    max-width: 340px;
 }
 
 .intel-badge:hover {
     background: #ffffff;
-    box-shadow: 0 4px 16px rgba(59, 130, 246, 0.12);
-    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(8, 145, 178, 0.15);
+    transform: translateY(-3px);
+    border-color: rgba(8, 145, 178, 0.2);
 }
 
 .badge-icon {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.badge-content {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.badge-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.badge-desc {
+    font-size: 0.875rem;
+    color: #64748b;
+    line-height: 1.5;
 }
 
 .intel-badge span:last-child {
@@ -5330,15 +5353,28 @@ body {
     }
     
     .intelligence-badges {
-        gap: 10px;
+        gap: 12px;
         margin-top: 24px;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0 16px;
     }
     
     .intel-badge {
-        padding: 10px 16px;
+        padding: 16px;
+        max-width: none;
+        min-width: unset;
     }
     
-    .intel-badge span:last-child {
+    .badge-icon {
+        font-size: 1.25rem;
+    }
+    
+    .badge-title {
+        font-size: 0.9375rem;
+    }
+    
+    .badge-desc {
         font-size: 0.8125rem;
     }
     
