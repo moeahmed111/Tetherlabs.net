@@ -4357,9 +4357,12 @@ body {
     }
     
     .step-content {
-        padding: 0;
+        padding: 0 !important;
+        padding-left: 1rem !important;
         flex: 1;
         width: 100%;
+        border-left: 3px solid #e0f2fe !important;
+        margin-left: 0 !important;
     }
     
     .accordion-header {
@@ -5142,9 +5145,21 @@ body {
     }
     
     .intelligence-flow {
-        margin: 0 16px 32px;
-        padding: 24px 16px;
+        margin: 0 16px 40px;
+        padding: 24px 16px 50px;
         border-radius: 16px;
+    }
+    
+    .intelligence-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .intelligence-context {
+        font-size: 0.9375rem;
+    }
+    
+    .hero-title-sub {
+        font-size: 0.75em;
     }
     
     .flow-track {
