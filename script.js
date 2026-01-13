@@ -187,11 +187,12 @@ function initAccordion() {
     return;
 }
 
-// Intelligence Flow - Scroll animations
+// Intelligence Flow - Scroll animations and tooltip interactions
 function initIntelligenceFlow() {
     const flowSection = document.querySelector('.intelligence-flow-section');
     
     if (flowSection) {
+        // Scroll animation observer
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -204,8 +205,8 @@ function initIntelligenceFlow() {
                         }, index * 100);
                     });
                     
-                    // Animate highlights
-                    const highlights = entry.target.querySelectorAll('.highlight-item');
+                    // Animate highlight cards
+                    const highlights = entry.target.querySelectorAll('.highlight-card, .highlight-item');
                     highlights.forEach((item, index) => {
                         setTimeout(() => {
                             item.style.opacity = '1';
@@ -227,7 +228,7 @@ function initIntelligenceFlow() {
         });
         
         // Set initial state for highlights
-        const highlights = flowSection.querySelectorAll('.highlight-item');
+        const highlights = flowSection.querySelectorAll('.highlight-card, .highlight-item');
         highlights.forEach(item => {
             item.style.opacity = '0';
             item.style.transform = 'translateY(15px)';
@@ -235,5 +236,59 @@ function initIntelligenceFlow() {
         });
         
         observer.observe(flowSection);
+        
+        // Mobile tooltip interactions
+        const isMobile = () => window.innerWidth <= 768;
+        
+        nodes.forEach(node => {
+            const circle = node.querySelector('.node-circle');
+            
+            // Touch/click handler for mobile
+            circle.addEventListener('click', function(e) {
+                if (isMobile()) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    // Close all other tooltips
+                    nodes.forEach(n => {
+                        if (n !== node) {
+                            n.classList.remove('tooltip-active');
+                        }
+                    });
+                    
+                    // Toggle current tooltip
+                    node.classList.toggle('tooltip-active');
+                }
+            });
+            
+            // Keyboard accessibility
+            circle.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    node.classList.toggle('tooltip-active');
+                }
+                if (e.key === 'Escape') {
+                    node.classList.remove('tooltip-active');
+                }
+            });
+        });
+        
+        // Close tooltips when clicking outside
+        document.addEventListener('click', function(e) {
+            if (isMobile() && !e.target.closest('.flow-node')) {
+                nodes.forEach(node => {
+                    node.classList.remove('tooltip-active');
+                });
+            }
+        });
+        
+        // Handle resize
+        window.addEventListener('resize', function() {
+            if (!isMobile()) {
+                nodes.forEach(node => {
+                    node.classList.remove('tooltip-active');
+                });
+            }
+        });
     }
 }
