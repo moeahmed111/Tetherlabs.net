@@ -4855,8 +4855,8 @@ body {
 /* Flow Visual Container */
 .intelligence-flow {
     max-width: 800px;
-    margin: 0 auto 48px;
-    padding: 40px 32px 50px;
+    margin: 0 auto 70px;
+    padding: 40px 32px 70px;
     position: relative;
     background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(10px);
