@@ -15,19 +15,25 @@ function initStickyProgressLine() {
     const steps = document.querySelectorAll('.process-step');
     if (!steps.length) return;
     
-    // Only on mobile
-    if (window.innerWidth > 768) return;
-    
     function updateStepHighlights() {
+        // Only on mobile
+        if (window.innerWidth > 768) {
+            steps.forEach(step => step.classList.remove('in-view'));
+            return;
+        }
+        
         const windowHeight = window.innerHeight;
-        const triggerPoint = windowHeight * 0.6; // 60% from top
         
         steps.forEach(step => {
             const rect = step.getBoundingClientRect();
-            const stepMiddle = rect.top + (rect.height / 2);
+            const stepTop = rect.top;
+            const stepBottom = rect.bottom;
             
-            // Highlight if step is near the middle of viewport
-            if (stepMiddle < triggerPoint && stepMiddle > windowHeight * 0.2) {
+            // Highlight if any part of the step is in the middle 60% of viewport
+            const viewportTop = windowHeight * 0.2;
+            const viewportBottom = windowHeight * 0.8;
+            
+            if (stepTop < viewportBottom && stepBottom > viewportTop) {
                 step.classList.add('in-view');
             } else {
                 step.classList.remove('in-view');
@@ -35,20 +41,23 @@ function initStickyProgressLine() {
         });
     }
     
-    // Update on scroll
-    window.addEventListener('scroll', updateStepHighlights, { passive: true });
+    // Update on scroll with requestAnimationFrame for smoothness
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                updateStepHighlights();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }, { passive: true });
     
     // Initial check
     updateStepHighlights();
     
     // Re-check on resize
-    window.addEventListener('resize', () => {
-        if (window.innerWidth > 768) {
-            steps.forEach(step => step.classList.remove('in-view'));
-        } else {
-            updateStepHighlights();
-        }
-    });
+    window.addEventListener('resize', updateStepHighlights);
 }
 
 // Navigation functionality
