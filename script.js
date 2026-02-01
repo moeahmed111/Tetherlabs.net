@@ -180,6 +180,20 @@ function toggleReadMore(button) {
     }
 }
 
+// Toggle Deliverables for How We Drive Results section
+function toggleDeliverables(button) {
+    const content = button.nextElementSibling;
+    const isOpen = content.classList.contains('open');
+    
+    if (isOpen) {
+        content.classList.remove('open');
+        button.classList.remove('active');
+    } else {
+        content.classList.add('open');
+        button.classList.add('active');
+    }
+}
+
 // Accordion functionality - disabled on mobile (content always visible)
 function initAccordion() {
     // No accordion behavior needed - all content is visible by default

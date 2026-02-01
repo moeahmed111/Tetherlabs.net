@@ -64,73 +64,61 @@
 
 
     <!-- How We Drive Results Section -->
-    <section id="services" class="process-timeline-section">
+    <section id="services" class="drive-results-section">
         <div class="container">
             <div class="section-header">
                 <h2>How We Drive Results</h2>
             </div>
-            <div class="process-timeline">
-                <div class="process-step">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <button class="accordion-header" data-number="1">
-                            <h3>Audience Targeting</h3>
-                            <span class="accordion-icon">▾</span>
-                        </button>
-                        <div class="accordion-content">
-                            <p>We don't just find creators with big follower counts. We identify LinkedIn voices whose audiences match your ICP, ensuring your content reaches the right people.</p>
-                            <div class="step-deliverables">
-                                <strong>What we deliver:</strong>
-                                <ul>
-                                    <li>ICP-matched creator recommendations</li>
-                                    <li>Creator vetting and outreach</li>
-                                    <li>Engagement quality assessment</li>
-                                    <li>ICP audience validation</li>
-                                </ul>
-                            </div>
-                        </div>
+            <div class="drive-results-content">
+                <div class="drive-item">
+                    <span class="drive-number">01</span>
+                    <h3>Audience Targeting</h3>
+                    <p class="drive-description">We don't just find creators with big follower counts. We identify LinkedIn voices whose audiences match your ICP, ensuring your content reaches the right people.</p>
+                    <button class="deliverables-toggle" onclick="toggleDeliverables(this)">
+                        <span>What we deliver</span>
+                        <span class="toggle-icon">+</span>
+                    </button>
+                    <div class="deliverables-content">
+                        <ul>
+                            <li>ICP-matched creator recommendations</li>
+                            <li>Creator vetting and outreach</li>
+                            <li>Engagement quality assessment</li>
+                            <li>ICP audience validation</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="process-step">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <button class="accordion-header" data-number="2">
-                            <h3>Content That Resonates</h3>
-                            <span class="accordion-icon">▾</span>
-                        </button>
-                        <div class="accordion-content">
-                            <p>We brief creators on your positioning, key messages, and calls-to-action, then manage the entire content process. From educational posts to case studies to product breakdowns, we ensure every piece drives awareness and engagement with your target ICP.</p>
-                            <div class="step-deliverables">
-                                <strong>What we deliver:</strong>
-                                <ul>
-                                    <li>Content strategy and creator briefs</li>
-                                    <li>Review and approval process</li>
-                                    <li>Custom UTM tracking links</li>
-                                    <li>Post scheduling and coordination</li>
-                                </ul>
-                            </div>
-                        </div>
+                <div class="drive-item">
+                    <span class="drive-number">02</span>
+                    <h3>Content That Resonates</h3>
+                    <p class="drive-description">We brief creators on your positioning, key messages, and calls-to-action, then manage the entire content process. From educational posts to case studies to product breakdowns, we ensure every piece drives awareness and engagement with your target ICP.</p>
+                    <button class="deliverables-toggle" onclick="toggleDeliverables(this)">
+                        <span>What we deliver</span>
+                        <span class="toggle-icon">+</span>
+                    </button>
+                    <div class="deliverables-content">
+                        <ul>
+                            <li>Content strategy and creator briefs</li>
+                            <li>Review and approval process</li>
+                            <li>Custom UTM tracking links</li>
+                            <li>Post scheduling and coordination</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="process-step">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <button class="accordion-header" data-number="3">
-                            <h3>Pipeline Generation</h3>
-                            <span class="accordion-icon">▾</span>
-                        </button>
-                        <div class="accordion-content">
-                            <p>We monitor your creator campaigns, identify prospects showing engagement and intent signals, validate ICP fit using enriched data, and reach out via personalized LinkedIn sequences. Using their comments and enriched data as conversation starters, we book qualified meetings for your team, turning intent signals into booked meetings.</p>
-                            <div class="step-deliverables">
-                                <strong>What we deliver:</strong>
-                                <ul>
-                                    <li>Campaign performance reporting (clicks, impressions, engagement, CPC)</li>
-                                    <li>Personalized LinkedIn outreach + booked meetings</li>
-                                    <li>Enriched lead profiles with conversation intelligence</li>
-                                    <li>Strategic recommendations for future campaigns</li>
-                                </ul>
-                            </div>
-                        </div>
+                <div class="drive-item">
+                    <span class="drive-number">03</span>
+                    <h3>Pipeline Generation</h3>
+                    <p class="drive-description">We monitor your creator campaigns, identify prospects showing engagement and intent signals, validate ICP fit using enriched data, and reach out via personalized LinkedIn sequences. Using their comments and enriched data as conversation starters, we book qualified meetings for your team, turning intent signals into booked meetings.</p>
+                    <button class="deliverables-toggle" onclick="toggleDeliverables(this)">
+                        <span>What we deliver</span>
+                        <span class="toggle-icon">+</span>
+                    </button>
+                    <div class="deliverables-content">
+                        <ul>
+                            <li>Campaign performance reporting (clicks, impressions, engagement, CPC)</li>
+                            <li>Personalized LinkedIn outreach + booked meetings</li>
+                            <li>Enriched lead profiles with conversation intelligence</li>
+                            <li>Strategic recommendations for future campaigns</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -146,19 +134,31 @@
             </div>
             <div class="research-cards">
                 <div class="research-card">
-                    <span class="research-source">McKinsey Global B2B Pulse, 2024</span>
-                    <h3>10+ channels per buying journey</h3>
-                    <p>B2B buyers move across 10+ channels in a single journey—your brand needs trusted voices reaching them wherever they research, especially on LinkedIn.</p>
+                    <div class="research-left">
+                        <span class="research-source">McKinsey Global B2B Pulse, 2024</span>
+                        <h3>10+ channels per buying journey</h3>
+                    </div>
+                    <div class="research-right">
+                        <p>B2B buyers move across 10+ channels in a single journey—your brand needs trusted voices reaching them wherever they research, especially on LinkedIn.</p>
+                    </div>
                 </div>
                 <div class="research-card">
-                    <span class="research-source">Gartner B2B Sales Research, 2025</span>
-                    <h3>61% prefer a rep-free experience</h3>
-                    <p>Most B2B buyers want to self-educate through digital content and actively avoid generic outreach, which makes creator-led content far more welcome than cold calls or spam.</p>
+                    <div class="research-left">
+                        <span class="research-source">Gartner B2B Sales Research, 2025</span>
+                        <h3>61% prefer a rep-free experience</h3>
+                    </div>
+                    <div class="research-right">
+                        <p>Most B2B buyers want to self-educate through digital content and actively avoid generic outreach, which makes creator-led content far more welcome than cold calls or spam.</p>
+                    </div>
                 </div>
                 <div class="research-card">
-                    <span class="research-source">Edelman–LinkedIn 2025</span>
-                    <h3>95% of hidden buyers become receptive to outreach</h3>
-                    <p>LinkedIn is where hidden buyers research solutions before talking to sales. Strong thought leadership from trusted creators makes them open to outreach they'd normally ignore, and 79% actively champion new vendors during the final purchase decision.</p>
+                    <div class="research-left">
+                        <span class="research-source">Edelman–LinkedIn 2025</span>
+                        <h3>95% of hidden buyers become receptive</h3>
+                    </div>
+                    <div class="research-right">
+                        <p>LinkedIn is where hidden buyers research solutions before talking to sales. Strong thought leadership from trusted creators makes them open to outreach they'd normally ignore, and 79% actively champion new vendors during the final purchase decision.</p>
+                    </div>
                 </div>
             </div>
             <p class="why-it-works-cta">This is why our approach works: creator campaigns get you in front of buying teams during their research phase, then we convert qualified engagement into booked meetings.</p>
