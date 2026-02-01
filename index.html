@@ -6,19 +6,6 @@
     <meta name="description" content="Connect with decision-makers through voices they already trust. Generate qualified pipeline with complete click tracking and performance visibility.">
     <meta name="google-site-verification" content="amyXJXYOyna91eJAumQTd7SReT4r8JyW5ZlVr9nlc5M" />
     <title>TetherLabs – LinkedIn Creator Marketing for Tech & SaaS</title>
-    
-    <!-- Open Graph / Social Media -->
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="TetherLabs">
-    <meta property="og:title" content="TetherLabs – LinkedIn Creator Marketing for Tech & SaaS">
-    <meta property="og:description" content="Connect with decision-makers through voices they already trust. Generate qualified pipeline with complete click tracking and performance visibility.">
-    <meta property="og:url" content="https://www.tetherlabs.net">
-    <meta property="og:image" content="https://www.tetherlabs.net/web-app-manifest-512x512.png">
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="TetherLabs – LinkedIn Creator Marketing for Tech & SaaS">
-    <meta name="twitter:description" content="Connect with decision-makers through voices they already trust. Generate qualified pipeline with complete click tracking and performance visibility.">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -31,6 +18,9 @@
     <meta name="apple-mobile-web-app-title" content="TetherLabs" />
     <link rel="manifest" href="/site.webmanifest" />
     
+    <!-- Calendly Widget -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -48,7 +38,7 @@
                     <a href="#our-services" class="nav-link">Services</a>
                 </li>
                 <li class="nav-item">
-                    <a href="https://tally.so/r/kdeVDe" target="_blank" class="nav-link cta-button">Schedule a Strategy Call</a>
+                    <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/YOUR_CALENDLY_LINK'});return false;" class="nav-link cta-button">Schedule a Strategy Call</a>
                 </li>
             </ul>
             <div class="hamburger" id="hamburger">
@@ -63,10 +53,10 @@
     <section id="home" class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <h1 class="hero-title">LinkedIn Creator Marketing<br><span class="hero-title-sub">for Tech & SaaS</span></h1>
+                <h1 class="hero-title">LinkedIn Creator Marketing<br class="mobile-br"> for Tech & SaaS</h1>
                 <p class="hero-subtitle">Connect with decision-makers through voices they already trust. Generate qualified pipeline with complete click tracking and performance visibility.</p>
                 <div class="hero-cta">
-                    <a href="https://tally.so/r/kdeVDe" target="_blank" class="btn-primary">Schedule a Strategy Call</a>
+                    <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/YOUR_CALENDLY_LINK'});return false;" class="btn-primary">Schedule a Strategy Call</a>
                 </div>
             </div>
         </div>
@@ -74,83 +64,73 @@
 
 
     <!-- How We Drive Results Section -->
-    <section id="services" class="how-we-drive-section">
+    <section id="services" class="process-timeline-section">
         <div class="container">
             <div class="section-header">
                 <h2>How We Drive Results</h2>
             </div>
-            <div class="drive-results-grid">
-                <div class="drive-card">
-                    <div class="drive-card-number">01</div>
-                    <h3>Audience Targeting</h3>
-                    <p>We don't just find creators with big follower counts. We identify LinkedIn voices whose audiences match your ICP, ensuring your content reaches the right people.</p>
-                    <div class="drive-deliverables">
-                        <strong>What we deliver:</strong>
-                        <ul>
-                            <li>ICP-matched creator recommendations</li>
-                            <li>Creator vetting and outreach</li>
-                            <li>Engagement quality assessment</li>
-                            <li>ICP audience validation</li>
-                        </ul>
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <button class="accordion-header" data-number="1">
+                            <h3>Strategy & Selection</h3>
+                            <span class="accordion-icon">▾</span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>We map your ICP and identify B2B creators whose audiences actually match your buyers, not just follower counts. We analyze demographics, engagement quality, and audience authenticity to ensure you're reaching decision-makers, not just generating impressions.</p>
+                            <div class="step-deliverables">
+                                <strong>What we deliver:</strong>
+                                <ul>
+                                    <li>ICP analysis and B2B creator vetting</li>
+                                    <li>Audience quality assessment and authenticity checks</li>
+                                    <li>Ongoing pipeline of vetted professionals for future campaigns</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="drive-card">
-                    <div class="drive-card-number">02</div>
-                    <h3>Content That Resonates</h3>
-                    <p>We brief creators on your positioning, key messages, and calls-to-action, then manage the entire content process. From educational posts to case studies to product breakdowns, we ensure every piece drives awareness and engagement with your target ICP.</p>
-                    <div class="drive-deliverables">
-                        <strong>What we deliver:</strong>
-                        <ul>
-                            <li>Content strategy and creator briefs</li>
-                            <li>Review and approval process</li>
-                            <li>Custom UTM tracking links</li>
-                            <li>Post scheduling and coordination</li>
-                        </ul>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <button class="accordion-header" data-number="2">
+                            <h3>Campaign Execution</h3>
+                            <span class="accordion-icon">▾</span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>We manage everything: creator coordination, content planning, posting schedules, and tracking infrastructure. You'll see complete click visibility by creator with real-time performance monitoring throughout your campaign.</p>
+                            <div class="step-deliverables">
+                                <strong>What we deliver:</strong>
+                                <ul>
+                                    <li>End-to-end campaign management (contracts, coordination, scheduling)</li>
+                                    <li>Custom link tracking with real-time performance visibility</li>
+                                    <li>Content planning aligned with your campaign goals (resource downloads, demo requests, free trial signups)</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="drive-card">
-                    <div class="drive-card-number">03</div>
-                    <h3>Pipeline Generation</h3>
-                    <p>We monitor your creator campaigns, identify prospects showing engagement and intent signals, validate ICP fit using enriched data, and reach out via personalized LinkedIn sequences. Using their comments and enriched data as conversation starters, we book qualified meetings for your team, turning intent signals into booked meetings.</p>
-                    <div class="drive-deliverables">
-                        <strong>What we deliver:</strong>
-                        <ul>
-                            <li>Campaign performance reporting (clicks, impressions, engagement, CPC)</li>
-                            <li>Personalized LinkedIn outreach + booked meetings</li>
-                            <li>Enriched lead profiles with conversation intelligence</li>
-                            <li>Strategic recommendations for future campaigns</li>
-                        </ul>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <button class="accordion-header" data-number="3">
+                            <h3>Performance & Intelligence</h3>
+                            <span class="accordion-icon">▾</span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>We go beyond vanity metrics. You'll get detailed performance reporting with custom link tracking: clicks, impressions, engagement rates, and CPC. We identify decision-makers engaging with your content, giving your sales team high-intent prospects for warm outreach.</p>
+                            <div class="step-deliverables">
+                                <strong>What we deliver:</strong>
+                                <ul>
+                                    <li>Campaign performance reporting (clicks, impressions, engagement, CPC)</li>
+                                    <li>List of decision-makers who engaged with your content</li>
+                                    <li>Strategic recommendations for optimizing future campaigns</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Why B2B Creator Marketing Works Section -->
-    <section class="why-it-works-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Why B2B Creator Marketing Works</h2>
-                <p class="section-subtitle">Backed by data from leading research firms</p>
-            </div>
-            <div class="research-cards">
-                <div class="research-card">
-                    <span class="research-source">McKinsey Global B2B Pulse, 2024</span>
-                    <h3>10+ channels per buying journey</h3>
-                    <p>B2B buyers move across 10+ channels in a single journey—your brand needs trusted voices reaching them wherever they research, especially on LinkedIn.</p>
-                </div>
-                <div class="research-card">
-                    <span class="research-source">Gartner B2B Sales Research, 2025</span>
-                    <h3>61% prefer a rep-free experience</h3>
-                    <p>Most B2B buyers want to self-educate through digital content and actively avoid generic outreach, which makes creator-led content far more welcome than cold calls or spam.</p>
-                </div>
-                <div class="research-card">
-                    <span class="research-source">Edelman–LinkedIn 2025</span>
-                    <h3>95% of hidden buyers become receptive to outreach</h3>
-                    <p>LinkedIn is where hidden buyers research solutions before talking to sales. Strong thought leadership from trusted creators makes them open to outreach they'd normally ignore, and 79% actively champion new vendors during the final purchase decision.</p>
-                </div>
-            </div>
-            <p class="why-it-works-cta">This is why our approach works: creator campaigns get you in front of buying teams during their research phase, then we convert qualified engagement into booked meetings.</p>
         </div>
     </section>
 
@@ -164,12 +144,14 @@
                 <div class="service-item">
                     <span class="service-number">01</span>
                     <h3>LinkedIn Creator Campaigns</h3>
-                    <p class="service-description">Full-service LinkedIn creator marketing: ICP-matched creators, content coordination, performance tracking, personalized outbound, and booked meetings. Perfect for building awareness through trusted voices and converting engagement into pipeline.</p>
+                    <p class="service-description">Launch 4-6 week campaigns with vetted B2B creators who reach your exact ICP. We handle creator outreach, contracts, content coordination, and performance tracking, optimizing for your goals (demo requests, content downloads, signups). You'll receive ongoing lists of engaged ICP prospects and performance updates throughout the campaign so your sales team can act on fresh interest as it happens.</p>
+                    <button class="read-more-btn" onclick="toggleReadMore(this)">Read more</button>
                 </div>
                 <div class="service-item">
                     <span class="service-number">02</span>
-                    <h3>Newsletter Sponsorships</h3>
-                    <p class="service-description">Scale with newsletter sponsorships in B2B publications your ICP reads. Full sourcing, content coordination, contract negotiations, and performance tracking. Perfect for reaching buyers across trusted reading channels.</p>
+                    <h3>Multi-Channel Expansion</h3>
+                    <p class="service-description">Scale beyond LinkedIn with YouTube product demos and reviews, or newsletter sponsorships in publications that reach your ICP. We handle creator/publisher sourcing, contract negotiations, content coordination, and performance tracking, giving you the same hands-off experience and measurable results across every channel.</p>
+                    <button class="read-more-btn" onclick="toggleReadMore(this)">Read more</button>
                 </div>
             </div>
         </div>
@@ -204,7 +186,7 @@
                     <p>Schedule a consultation to discuss your goals and see how we can help you break through the noise on LinkedIn.</p>
                 </div>
                 <div class="contact-cta">
-                    <a href="https://tally.so/r/kdeVDe" target="_blank" class="btn-primary large">Schedule a Strategy Call</a>
+                    <a href="" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/YOUR_CALENDLY_LINK'});return false;" class="btn-primary large">Schedule a Strategy Call</a>
                 </div>
             </div>
         </div>
@@ -240,7 +222,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 TetherLabs. All rights reserved. | <a href="privacy-policy.html">Privacy Policy</a></p>
+                <p>&copy; 2025 TetherLabs. All rights reserved. | <a href="privacy-policy.html">Privacy Policy</a></p>
             </div>
         </div>
     </footer>
