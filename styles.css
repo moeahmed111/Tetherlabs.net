@@ -3157,17 +3157,7 @@ body {
     
     .service-item p.service-description {
         font-size: 0.9rem;
-        line-height: 1.65;
-        display: -webkit-box;
-        -webkit-line-clamp: 4;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        transition: all 0.3s ease;
-    }
-    
-    .service-item p.service-description.expanded {
-        -webkit-line-clamp: unset;
-        display: block;
+        line-height: 1.7;
     }
     
     .read-more-btn {
