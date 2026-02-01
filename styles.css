@@ -1847,54 +1847,75 @@ body {
 /* Hero Section - Clean Minimalist Design */
 .hero {
     min-height: 100vh;
-    background: linear-gradient(180deg, #FAFBFC 0%, #FFFFFF 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 40%, #e0f2fe 70%, #f0f9ff 100%);
     display: flex;
     align-items: center;
+    justify-content: center;
     position: relative;
     overflow: hidden;
     padding: 80px 0;
-    border-bottom: 1px solid #E5E7EB;
+    border-bottom: none;
 }
 
+/* Floating gradient blob - top right (blue) */
 .hero::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        linear-gradient(45deg, transparent 30%, rgba(0, 212, 255, 0.03) 50%, transparent 70%),
-        radial-gradient(circle at 50% 50%, rgba(192, 192, 192, 0.1) 0%, transparent 70%);
+    top: -15%;
+    right: -5%;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.18) 0%, rgba(59, 130, 246, 0.08) 30%, rgba(6, 182, 212, 0.04) 50%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(40px);
+    animation: floatBlob1 18s ease-in-out infinite;
     pointer-events: none;
-    animation: heroPattern 12s linear infinite;
 }
 
-@keyframes heroPattern {
-    0% { transform: translateX(-100%) translateY(-100%); }
-    100% { transform: translateX(100%) translateY(100%); }
+@keyframes floatBlob1 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(-40px, 50px) scale(1.08); }
+    66% { transform: translate(30px, -30px) scale(0.95); }
+}
+
+/* Floating gradient blob - bottom left (cyan/green) */
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: -5%;
+    left: -8%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(6, 182, 212, 0.15) 0%, rgba(16, 185, 129, 0.08) 30%, transparent 60%);
+    border-radius: 50%;
+    filter: blur(40px);
+    animation: floatBlob2 22s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes floatBlob2 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(50px, -40px) scale(1.12); }
 }
 
 .hero-container {
-    max-width: 1200px;
+    max-width: 800px;
     margin: 0 auto;
     padding: 0 20px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
+    text-align: center;
     position: relative;
     z-index: 2;
 }
 
 .hero-content {
     color: #333333;
+    text-align: center;
 }
 
 .hero-title {
     font-size: 3.8rem;
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 1.15;
     margin-bottom: 1.5rem;
     color: #111827;
     position: relative;
@@ -1904,14 +1925,23 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
+.hero-title-sub {
+    display: block;
+    font-size: 0.85em;
+    font-weight: 600;
+    color: #0891b2;
+    margin-top: 0.1em;
+}
+
 .hero-title::after {
     content: '';
     position: absolute;
     bottom: -10px;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     width: 100px;
     height: 3px;
-    background: var(--gradient-primary);
+    background: #0891b2;
     border-radius: 2px;
     animation: titleUnderline 2s ease-in-out infinite alternate;
 }
@@ -1927,11 +1957,13 @@ body {
 }
 
 .hero-subtitle {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     color: #4B5563;
     margin-bottom: 2.5rem;
-    line-height: 1.7;
-    max-width: 700px;
+    line-height: 1.8;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
     opacity: 0;
     animation: fadeInUp 0.8s ease-out 0.4s forwards;
 }
@@ -3782,10 +3814,8 @@ body {
     }
 
     .hero-container {
-        grid-template-columns: 1fr;
         text-align: center;
-        gap: 2rem;
-        padding: 80px 0 60px;
+        padding: 60px 20px;
     }
 
     .hero-title {
@@ -3793,14 +3823,29 @@ body {
         margin-bottom: 1rem;
     }
     
+    .hero-title-sub {
+        font-size: 1em;
+        margin-top: 0.15em;
+    }
+    
     .hero-subtitle {
         font-size: 1.1rem;
         margin-bottom: 1.5rem;
     }
     
-    .hero-visual {
-        height: 400px;
-        order: -1;
+    /* Hide floating blobs on mobile for cleaner look */
+    .hero::before {
+        width: 300px !important;
+        height: 300px !important;
+        top: -10% !important;
+        right: -15% !important;
+        opacity: 0.5 !important;
+    }
+    
+    .hero::after {
+        width: 250px !important;
+        height: 250px !important;
+        opacity: 0.4 !important;
     }
 
     .what-we-do-content {
