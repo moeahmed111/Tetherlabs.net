@@ -2683,6 +2683,134 @@ body {
     font-weight: bold;
 }
 
+/* ============================================
+   WHY B2B CREATOR MARKETING WORKS
+   ============================================ */
+.why-it-works-section {
+    padding: 100px 0;
+    background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.why-it-works-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at 20% 20%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.why-it-works-section .section-header h2 {
+    color: #ffffff;
+}
+
+.why-it-works-section .section-subtitle {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.125rem;
+    margin-top: 12px;
+}
+
+.research-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    max-width: 1200px;
+    margin: 0 auto 48px;
+    position: relative;
+    z-index: 2;
+}
+
+.research-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 36px 28px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.research-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(59, 130, 246, 0.3);
+    transform: translateY(-4px);
+}
+
+.research-source {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #3b82f6;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 6px 12px;
+    background: rgba(59, 130, 246, 0.15);
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.research-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 16px;
+    line-height: 1.3;
+}
+
+.research-card p {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.7;
+}
+
+.why-it-works-cta {
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+    position: relative;
+    z-index: 2;
+    padding: 32px;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(16, 185, 129, 0.1) 100%);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Mobile Responsive for Why It Works */
+@media (max-width: 1024px) {
+    .research-cards {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .why-it-works-section {
+        padding: 60px 0;
+    }
+    
+    .research-card {
+        padding: 28px 24px;
+    }
+    
+    .research-card h3 {
+        font-size: 1.25rem;
+    }
+    
+    .why-it-works-cta {
+        font-size: 1.0625rem;
+        padding: 24px 20px;
+    }
+}
+
 /* Our Services Section - Clean Professional Layout */
 .our-services-section {
     padding: 100px 0;
