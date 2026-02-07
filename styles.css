@@ -3950,10 +3950,25 @@ body {
         display: flex;
         z-index: 1001;
         position: relative;
+        width: 44px;
+        height: 44px;
+        background: #111827;
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .hamburger .bar {
+        background: #ffffff;
+        width: 20px;
+        height: 2px;
+        transition: all 0.3s ease;
     }
     
     .hamburger.active .bar:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 6px);
+        transform: rotate(45deg) translate(5px, 5px);
     }
     
     .hamburger.active .bar:nth-child(2) {
@@ -3961,101 +3976,96 @@ body {
     }
     
     .hamburger.active .bar:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -6px);
+        transform: rotate(-45deg) translate(5px, -5px);
     }
 
-    /* Slide-out drawer menu */
+    /* Dropdown menu from top */
     .nav-menu {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 280px;
-        height: 100vh;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        width: 100%;
         flex-direction: column;
-        background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+        background: #ffffff;
         text-align: left;
-        transition: right 0.3s ease;
-        box-shadow: -4px 0 24px rgba(0, 0, 0, 0.15);
-        padding: 100px 0 40px;
-        z-index: 1000;
-        overflow-y: auto;
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+        padding: 16px 24px 24px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        border-bottom-left-radius: 16px;
+        border-bottom-right-radius: 16px;
     }
 
     .nav-menu.active {
-        right: 0;
-    }
-    
-    /* Overlay when menu is open */
-    .nav-menu::before {
-        content: '';
-        position: fixed;
-        top: 0;
-        left: -100vw;
-        width: 100vw;
-        height: 100vh;
-        background: rgba(0, 0, 0, 0.5);
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.3s ease;
-        z-index: -1;
-    }
-    
-    .nav-menu.active::before {
         opacity: 1;
         visibility: visible;
+        transform: translateY(0);
     }
 
     .nav-menu li {
         margin: 0;
-        border-bottom: 1px solid #e5e7eb;
+        border-bottom: 1px solid #f3f4f6;
     }
     
     .nav-menu li:last-child {
         border-bottom: none;
-        margin-top: auto;
-        padding: 20px;
+        padding-top: 16px;
     }
     
     .nav-link {
-        color: #1f2937;
-        font-size: 1.05rem;
-        font-weight: 500;
-        padding: 18px 24px;
+        color: #111827;
+        font-size: 1.1rem;
+        font-weight: 600;
+        padding: 20px 8px;
         transition: var(--transition);
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
     
     .nav-link:hover {
         color: #0891b2;
-        background: #f0f9ff;
     }
     
     .nav-link.cta-button {
-        background: linear-gradient(135deg, #0891b2 0%, #0e7490 100%);
+        background: #0891b2;
         color: #ffffff;
         margin: 0;
-        padding: 16px 24px;
-        border-radius: 12px;
+        padding: 18px 32px;
+        border-radius: 50px;
         text-align: center;
         font-weight: 600;
-        box-shadow: 0 4px 12px rgba(8, 145, 178, 0.3);
+        font-size: 1.05rem;
+        justify-content: center;
+        box-shadow: 0 4px 12px rgba(8, 145, 178, 0.25);
     }
     
     .nav-link.cta-button:hover {
-        background: linear-gradient(135deg, #0e7490 0%, #0c4a6e 100%);
+        background: #0e7490;
         transform: translateY(-2px);
     }
     
     .navbar.scrolled .nav-menu {
-        background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+        background: #ffffff;
     }
     
     .navbar.scrolled .nav-link {
-        color: #1f2937;
+        color: #111827;
     }
     
     .navbar.scrolled .nav-link:hover {
         color: #0891b2;
+    }
+    
+    .navbar.scrolled .hamburger {
+        background: #111827;
+    }
+    
+    .navbar.scrolled .hamburger .bar {
+        background: #ffffff;
     }
 
     .hero-container {
@@ -4442,7 +4452,12 @@ body {
     }
     
     .nav-menu {
-        width: 260px;
+        padding: 12px 20px 20px;
+    }
+    
+    .nav-link {
+        font-size: 1rem;
+        padding: 16px 8px;
     }
     
     .nav-link {
