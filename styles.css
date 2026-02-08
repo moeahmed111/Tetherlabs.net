@@ -2987,11 +2987,13 @@ body {
 }
 
 .research-cite {
-    font-size: 0.8rem;
-    color: #9ca3af;
-    font-style: italic;
-    padding-top: 12px;
-    border-top: 1px solid #f3f4f6;
+    font-size: 0.85rem;
+    color: #374151;
+    font-weight: 500;
+    padding: 12px 14px;
+    background: #f8fafc;
+    border-radius: 8px;
+    border-left: 3px solid #0891b2;
     margin-top: auto;
 }
 
@@ -3052,7 +3054,8 @@ body {
     }
     
     .research-cite {
-        font-size: 0.75rem;
+        font-size: 0.8rem;
+        padding: 10px 12px;
     }
     
     .why-it-works-cta {
