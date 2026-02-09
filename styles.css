@@ -4554,21 +4554,21 @@ body {
     
     .hero-container {
         gap: 2rem;
-        padding: 20px 16px 0;
+        padding: 20px 24px 0;
     }
 
     .hero-title {
         font-size: 1.5rem;
         line-height: 1.35;
         margin-bottom: 1.25rem;
-        padding: 0 8px;
+        padding: 0 16px;
     }
     
     .hero-subtitle {
         font-size: 1rem;
         line-height: 1.7;
         margin-bottom: 2rem;
-        padding: 0 12px;
+        padding: 0 20px;
     }
     
     .hero-visual {
@@ -5072,7 +5072,7 @@ body {
 /* Extra Small Mobile Devices */
 @media (max-width: 360px) {
     .container {
-        padding: 0 10px;
+        padding: 0 12px;
     }
     
     .hero {
@@ -5080,12 +5080,12 @@ body {
     }
     
     .hero-container {
-        padding: 15px 10px 0;
+        padding: 15px 16px 0;
     }
     
     .hero-title {
-        font-size: 1.35rem;
-        padding: 0 5px;
+        font-size: 1.3rem;
+        padding: 0 12px;
     }
     
     .section-header h2 {
