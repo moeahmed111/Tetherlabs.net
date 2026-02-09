@@ -1974,6 +1974,90 @@ body {
     animation: fadeInUp 0.8s ease-out 0.6s forwards;
 }
 
+/* Hero Floating Icons */
+.hero-floating-icons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.floating-icon {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.floating-icon i {
+    font-size: 1.25rem;
+    color: #0891b2;
+}
+
+.floating-icon.icon-1 {
+    top: 15%;
+    left: 8%;
+    animation: floatIcon1 8s ease-in-out infinite;
+}
+
+.floating-icon.icon-1 i {
+    color: #0077B5;
+}
+
+.floating-icon.icon-2 {
+    top: 25%;
+    right: 12%;
+    animation: floatIcon2 9s ease-in-out infinite;
+    animation-delay: -2s;
+}
+
+.floating-icon.icon-3 {
+    bottom: 30%;
+    left: 12%;
+    animation: floatIcon3 7s ease-in-out infinite;
+    animation-delay: -4s;
+}
+
+.floating-icon.icon-4 {
+    top: 60%;
+    right: 8%;
+    animation: floatIcon1 10s ease-in-out infinite;
+    animation-delay: -1s;
+}
+
+.floating-icon.icon-5 {
+    bottom: 20%;
+    right: 20%;
+    animation: floatIcon2 8s ease-in-out infinite;
+    animation-delay: -3s;
+}
+
+@keyframes floatIcon1 {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+@keyframes floatIcon2 {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(-5deg); }
+}
+
+@keyframes floatIcon3 {
+    0%, 100% { transform: translateY(0) translateX(0); }
+    50% { transform: translateY(-18px) translateX(10px); }
+}
+
 .btn-primary {
     display: inline-block;
     background: #06B6D4;
@@ -2765,6 +2849,202 @@ body {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+}
+
+/* Cycle Graphic */
+.cycle-graphic {
+    max-width: 700px;
+    margin: 0 auto 4rem;
+    position: relative;
+}
+
+.cycle-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.cycle-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1.5rem 2rem;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border-radius: 16px;
+    border: 2px solid #e5e7eb;
+    transition: all 0.3s ease;
+    position: relative;
+    min-width: 120px;
+}
+
+.cycle-node:hover {
+    transform: translateY(-4px);
+    border-color: #0891b2;
+    box-shadow: 0 12px 32px rgba(8, 145, 178, 0.15);
+}
+
+.node-icon {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(8, 145, 178, 0.25);
+}
+
+.node-icon i {
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+.cycle-node span {
+    font-weight: 600;
+    color: #111827;
+    font-size: 1rem;
+    letter-spacing: 0.02em;
+}
+
+.cycle-arrow {
+    width: 40px;
+    height: 40px;
+    color: #0891b2;
+    opacity: 0.6;
+    animation: pulseArrow 2s ease-in-out infinite;
+}
+
+.cycle-arrow svg {
+    width: 100%;
+    height: 100%;
+}
+
+.cycle-arrow.arrow-1 {
+    animation-delay: 0s;
+}
+
+.cycle-arrow.arrow-2 {
+    animation-delay: 0.5s;
+}
+
+.cycle-arrow.arrow-3 {
+    animation-delay: 1s;
+    transform: rotate(180deg);
+}
+
+@keyframes pulseArrow {
+    0%, 100% { opacity: 0.4; transform: translateX(0); }
+    50% { opacity: 1; transform: translateX(4px); }
+}
+
+.cycle-arrow.arrow-3 {
+    animation: pulseArrowReverse 2s ease-in-out infinite;
+    animation-delay: 1s;
+}
+
+@keyframes pulseArrowReverse {
+    0%, 100% { opacity: 0.4; transform: rotate(180deg) translateX(0); }
+    50% { opacity: 1; transform: rotate(180deg) translateX(4px); }
+}
+
+.cycle-center-text {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.9rem;
+    color: #6b7280;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+/* Node specific colors */
+.node-creator .node-icon {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    box-shadow: 0 8px 24px rgba(59, 130, 246, 0.25);
+}
+
+.node-content .node-icon {
+    background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+    box-shadow: 0 8px 24px rgba(139, 92, 246, 0.25);
+}
+
+.node-pipeline .node-icon {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    box-shadow: 0 8px 24px rgba(16, 185, 129, 0.25);
+}
+
+.node-creator:hover {
+    border-color: #3b82f6;
+}
+
+.node-content:hover {
+    border-color: #8b5cf6;
+}
+
+.node-pipeline:hover {
+    border-color: #10b981;
+}
+
+/* Cycle graphic mobile */
+@media (max-width: 768px) {
+    .cycle-graphic {
+        margin-bottom: 3rem;
+    }
+    
+    .cycle-container {
+        gap: 0.75rem;
+    }
+    
+    .cycle-node {
+        padding: 1rem 1.25rem;
+        min-width: 90px;
+    }
+    
+    .node-icon {
+        width: 44px;
+        height: 44px;
+    }
+    
+    .node-icon i {
+        font-size: 1.1rem;
+    }
+    
+    .cycle-node span {
+        font-size: 0.85rem;
+    }
+    
+    .cycle-arrow {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+@media (max-width: 500px) {
+    .cycle-container {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .cycle-arrow {
+        transform: rotate(90deg);
+    }
+    
+    .cycle-arrow.arrow-3 {
+        transform: rotate(-90deg);
+    }
+    
+    @keyframes pulseArrow {
+        0%, 100% { opacity: 0.4; transform: rotate(90deg) translateX(0); }
+        50% { opacity: 1; transform: rotate(90deg) translateX(4px); }
+    }
+    
+    @keyframes pulseArrowReverse {
+        0%, 100% { opacity: 0.4; transform: rotate(-90deg) translateX(0); }
+        50% { opacity: 1; transform: rotate(-90deg) translateX(4px); }
+    }
 }
 
 .drive-item {
@@ -4016,7 +4296,8 @@ body {
     /* Disable floating animations on tablets and mobile */
     .element,
     .particle,
-    .floating-elements {
+    .floating-elements,
+    .hero-floating-icons {
         display: none !important;
     }
     
