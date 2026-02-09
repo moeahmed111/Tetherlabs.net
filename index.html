@@ -75,38 +75,42 @@
                 <h2>How We Drive Results</h2>
             </div>
             
-            <!-- Cycle Graphic -->
+            <!-- Cycle Graphic - Circular Loop -->
             <div class="cycle-graphic">
-                <div class="cycle-container">
+                <div class="cycle-ring">
+                    <!-- Animated rotating ring -->
+                    <svg class="cycle-ring-svg" viewBox="0 0 300 300">
+                        <defs>
+                            <linearGradient id="ringGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+                                <stop offset="50%" style="stop-color:#8b5cf6;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#10b981;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <circle class="ring-bg" cx="150" cy="150" r="120" />
+                        <circle class="ring-progress" cx="150" cy="150" r="120" />
+                    </svg>
+                    
+                    <!-- Center text -->
+                    <div class="cycle-center">
+                        <span>Continuous</span>
+                        <span>Growth</span>
+                    </div>
+                    
+                    <!-- Nodes positioned around the ring -->
                     <div class="cycle-node node-creator">
                         <div class="node-icon"><i class="fas fa-user-tie"></i></div>
                         <span>Creator</span>
-                    </div>
-                    <div class="cycle-arrow arrow-1">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
                     </div>
                     <div class="cycle-node node-content">
                         <div class="node-icon"><i class="fas fa-pen-fancy"></i></div>
                         <span>Content</span>
                     </div>
-                    <div class="cycle-arrow arrow-2">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
-                    </div>
                     <div class="cycle-node node-pipeline">
                         <div class="node-icon"><i class="fas fa-chart-line"></i></div>
                         <span>Pipeline</span>
                     </div>
-                    <div class="cycle-arrow arrow-3">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M5 12h14M12 5l7 7-7 7"/>
-                        </svg>
-                    </div>
                 </div>
-                <div class="cycle-center-text">Continuous Growth</div>
             </div>
             
             <div class="drive-results-content">

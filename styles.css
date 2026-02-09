@@ -2851,129 +2851,151 @@ body {
     gap: 2rem;
 }
 
-/* Cycle Graphic */
+/* Cycle Graphic - Circular Loop */
 .cycle-graphic {
-    max-width: 700px;
+    max-width: 400px;
     margin: 0 auto 4rem;
     position: relative;
 }
 
-.cycle-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
+.cycle-ring {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    margin: 0 auto;
 }
 
+.cycle-ring-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+}
+
+.ring-bg {
+    fill: none;
+    stroke: #e5e7eb;
+    stroke-width: 4;
+}
+
+.ring-progress {
+    fill: none;
+    stroke: url(#ringGradient);
+    stroke-width: 6;
+    stroke-linecap: round;
+    stroke-dasharray: 754;
+    stroke-dashoffset: 0;
+    animation: rotateRing 8s linear infinite;
+    filter: drop-shadow(0 0 8px rgba(139, 92, 246, 0.3));
+}
+
+@keyframes rotateRing {
+    0% { transform: rotate(0deg); transform-origin: center; }
+    100% { transform: rotate(360deg); transform-origin: center; }
+}
+
+.cycle-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.cycle-center span {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.cycle-center span:last-child {
+    color: #0891b2;
+}
+
+/* Nodes positioned around the ring */
 .cycle-node {
+    position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.75rem;
-    padding: 1.5rem 2rem;
-    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    gap: 0.5rem;
+    padding: 1rem 1.25rem;
+    background: #ffffff;
     border-radius: 16px;
     border: 2px solid #e5e7eb;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
-    position: relative;
-    min-width: 120px;
+    z-index: 2;
 }
 
 .cycle-node:hover {
-    transform: translateY(-4px);
-    border-color: #0891b2;
-    box-shadow: 0 12px 32px rgba(8, 145, 178, 0.15);
+    transform: scale(1.05);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 .node-icon {
-    width: 56px;
-    height: 56px;
-    background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 8px 24px rgba(8, 145, 178, 0.25);
 }
 
 .node-icon i {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     color: #ffffff;
 }
 
 .cycle-node span {
     font-weight: 600;
     color: #111827;
-    font-size: 1rem;
+    font-size: 0.875rem;
     letter-spacing: 0.02em;
 }
 
-.cycle-arrow {
-    width: 40px;
-    height: 40px;
-    color: #0891b2;
-    opacity: 0.6;
-    animation: pulseArrow 2s ease-in-out infinite;
+/* Node positions - circular arrangement */
+.node-creator {
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-.cycle-arrow svg {
-    width: 100%;
-    height: 100%;
+.node-creator:hover {
+    transform: translateX(-50%) scale(1.05);
 }
 
-.cycle-arrow.arrow-1 {
-    animation-delay: 0s;
+.node-content {
+    bottom: 30px;
+    left: -30px;
 }
 
-.cycle-arrow.arrow-2 {
-    animation-delay: 0.5s;
-}
-
-.cycle-arrow.arrow-3 {
-    animation-delay: 1s;
-    transform: rotate(180deg);
-}
-
-@keyframes pulseArrow {
-    0%, 100% { opacity: 0.4; transform: translateX(0); }
-    50% { opacity: 1; transform: translateX(4px); }
-}
-
-.cycle-arrow.arrow-3 {
-    animation: pulseArrowReverse 2s ease-in-out infinite;
-    animation-delay: 1s;
-}
-
-@keyframes pulseArrowReverse {
-    0%, 100% { opacity: 0.4; transform: rotate(180deg) translateX(0); }
-    50% { opacity: 1; transform: rotate(180deg) translateX(4px); }
-}
-
-.cycle-center-text {
-    text-align: center;
-    margin-top: 1.5rem;
-    font-size: 0.9rem;
-    color: #6b7280;
-    font-weight: 500;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
+.node-pipeline {
+    bottom: 30px;
+    right: -30px;
 }
 
 /* Node specific colors */
 .node-creator .node-icon {
     background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-    box-shadow: 0 8px 24px rgba(59, 130, 246, 0.25);
+    box-shadow: 0 4px 16px rgba(59, 130, 246, 0.3);
 }
 
 .node-content .node-icon {
     background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
-    box-shadow: 0 8px 24px rgba(139, 92, 246, 0.25);
+    box-shadow: 0 4px 16px rgba(139, 92, 246, 0.3);
 }
 
 .node-pipeline .node-icon {
     background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-    box-shadow: 0 8px 24px rgba(16, 185, 129, 0.25);
+    box-shadow: 0 4px 16px rgba(16, 185, 129, 0.3);
 }
 
 .node-creator:hover {
@@ -2992,58 +3014,81 @@ body {
 @media (max-width: 768px) {
     .cycle-graphic {
         margin-bottom: 3rem;
+        max-width: 320px;
     }
     
-    .cycle-container {
-        gap: 0.75rem;
+    .cycle-ring {
+        width: 280px;
+        height: 280px;
     }
     
     .cycle-node {
-        padding: 1rem 1.25rem;
-        min-width: 90px;
+        padding: 0.75rem 1rem;
     }
     
     .node-icon {
-        width: 44px;
-        height: 44px;
+        width: 40px;
+        height: 40px;
     }
     
     .node-icon i {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
     
     .cycle-node span {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
     }
     
-    .cycle-arrow {
-        width: 28px;
-        height: 28px;
+    .node-content {
+        left: -20px;
+        bottom: 20px;
+    }
+    
+    .node-pipeline {
+        right: -20px;
+        bottom: 20px;
+    }
+    
+    .cycle-center span {
+        font-size: 0.85rem;
     }
 }
 
-@media (max-width: 500px) {
-    .cycle-container {
-        flex-direction: column;
-        gap: 0.5rem;
+@media (max-width: 400px) {
+    .cycle-ring {
+        width: 240px;
+        height: 240px;
     }
     
-    .cycle-arrow {
-        transform: rotate(90deg);
+    .cycle-node {
+        padding: 0.6rem 0.8rem;
     }
     
-    .cycle-arrow.arrow-3 {
-        transform: rotate(-90deg);
+    .node-icon {
+        width: 36px;
+        height: 36px;
     }
     
-    @keyframes pulseArrow {
-        0%, 100% { opacity: 0.4; transform: rotate(90deg) translateX(0); }
-        50% { opacity: 1; transform: rotate(90deg) translateX(4px); }
+    .node-icon i {
+        font-size: 0.9rem;
     }
     
-    @keyframes pulseArrowReverse {
-        0%, 100% { opacity: 0.4; transform: rotate(-90deg) translateX(0); }
-        50% { opacity: 1; transform: rotate(-90deg) translateX(4px); }
+    .cycle-node span {
+        font-size: 0.75rem;
+    }
+    
+    .node-content {
+        left: -10px;
+        bottom: 15px;
+    }
+    
+    .node-pipeline {
+        right: -10px;
+        bottom: 15px;
+    }
+    
+    .cycle-center span {
+        font-size: 0.75rem;
     }
 }
 
