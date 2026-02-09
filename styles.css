@@ -4137,14 +4137,19 @@ body {
         background: #ffffff;
     }
 
+    .hero {
+        padding: 110px 0 70px;
+    }
+    
     .hero-container {
         text-align: center;
-        padding: 60px 20px;
+        padding: 30px 20px 0;
+        gap: 2rem;
     }
 
     .hero-title {
         font-size: 2.5rem;
-        margin-bottom: 1rem;
+        margin-bottom: 1.25rem;
     }
     
     .hero-title-sub {
@@ -4154,7 +4159,7 @@ body {
     
     .hero-subtitle {
         font-size: 1.1rem;
-        margin-bottom: 1.5rem;
+        margin-bottom: 2rem;
     }
     
     /* Hide floating blobs on mobile for cleaner look */
@@ -4544,26 +4549,26 @@ body {
     /* Hero Section */
     .hero {
         min-height: auto;
-        padding: 90px 0 50px;
+        padding: 120px 0 60px;
     }
     
     .hero-container {
-        gap: 1.5rem;
-        padding: 0 8px;
+        gap: 2rem;
+        padding: 20px 16px 0;
     }
 
     .hero-title {
         font-size: 1.5rem;
         line-height: 1.35;
-        margin-bottom: 1rem;
+        margin-bottom: 1.25rem;
         padding: 0 8px;
     }
     
     .hero-subtitle {
         font-size: 1rem;
         line-height: 1.7;
-        margin-bottom: 1.5rem;
-        padding: 0 8px;
+        margin-bottom: 2rem;
+        padding: 0 12px;
     }
     
     .hero-visual {
@@ -5068,6 +5073,14 @@ body {
 @media (max-width: 360px) {
     .container {
         padding: 0 10px;
+    }
+    
+    .hero {
+        padding: 110px 0 50px;
+    }
+    
+    .hero-container {
+        padding: 15px 10px 0;
     }
     
     .hero-title {
