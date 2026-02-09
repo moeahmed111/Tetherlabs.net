@@ -2922,6 +2922,11 @@ body {
     .drive-item h3 {
         font-size: 1.25rem;
     }
+    
+    .drive-item p.drive-description {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
 }
 
 /* ============================================
