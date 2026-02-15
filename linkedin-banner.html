@@ -57,41 +57,27 @@
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
         }
 
-        /* Profile photo safe zone indicator (for reference - comment out for final) */
-        .safe-zone {
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 500px;
-            height: 100%;
-            /* Uncomment to see the safe zone */
-            /* background: rgba(255, 0, 0, 0.1); */
-            /* border-right: 2px dashed rgba(255, 0, 0, 0.3); */
-            pointer-events: none;
-            z-index: 10;
-        }
-
         /* Subtle gradient accent on right side */
         .banner::before {
             content: '';
             position: absolute;
             top: 0;
             right: 0;
-            width: 50%;
+            width: 40%;
             height: 100%;
-            background: radial-gradient(ellipse at 90% 50%, rgba(8, 145, 178, 0.12) 0%, transparent 60%);
+            background: radial-gradient(ellipse at 85% 60%, rgba(8, 145, 178, 0.1) 0%, transparent 55%);
             pointer-events: none;
         }
 
         /* Geometric accent - subtle circles */
         .accent-circles {
             position: absolute;
-            right: 100px;
+            right: 50px;
             top: 50%;
             transform: translateY(-50%);
-            width: 350px;
-            height: 350px;
-            opacity: 0.08;
+            width: 300px;
+            height: 300px;
+            opacity: 0.06;
             pointer-events: none;
         }
 
@@ -104,36 +90,37 @@
         }
 
         .accent-circles::before {
-            width: 200px;
-            height: 200px;
-            top: 75px;
-            left: 75px;
+            width: 180px;
+            height: 180px;
+            top: 60px;
+            left: 60px;
         }
 
         .accent-circles::after {
-            width: 320px;
-            height: 320px;
-            top: 15px;
-            left: 15px;
+            width: 280px;
+            height: 280px;
+            top: 10px;
+            left: 10px;
         }
 
         /* Main content - starts after 500px safe zone */
         .banner-content {
             position: absolute;
-            left: 540px; /* Starting after 500px safe zone + some padding */
+            left: 540px;
             top: 50%;
             transform: translateY(-50%);
             z-index: 2;
-            max-width: 700px;
         }
 
+        /* Single line headline - reduced size */
         .headline {
-            font-size: 58px;
+            font-size: 46px;
             font-weight: 800;
             color: #ffffff;
-            line-height: 1.1;
-            margin-bottom: 16px;
+            line-height: 1.15;
+            margin-bottom: 14px;
             letter-spacing: -0.03em;
+            white-space: nowrap;
         }
 
         .headline span {
@@ -143,38 +130,51 @@
             background-clip: text;
         }
 
+        /* Subline - smaller and lighter */
         .subheadline {
-            font-size: 24px;
-            color: #e2e8f0;
+            font-size: 18px;
+            color: #94a3b8;
             font-weight: 500;
             letter-spacing: 0.01em;
         }
 
         .subheadline .arrow {
             color: #0891b2;
-            margin: 0 8px;
+            margin: 0 6px;
+            font-weight: 600;
         }
 
-        /* Logo area - right side, more prominent */
-        .logo-area {
+        /* Vertical divider line */
+        .divider {
             position: absolute;
-            right: 70px;
+            right: 320px;
             top: 50%;
             transform: translateY(-50%);
-            display: flex;
-            align-items: center;
-            gap: 20px;
+            width: 1px;
+            height: 120px;
+            background: linear-gradient(180deg, transparent 0%, rgba(148, 163, 184, 0.3) 20%, rgba(148, 163, 184, 0.3) 80%, transparent 100%);
             z-index: 2;
         }
 
-        /* Bird icon - larger, no white box */
+        /* Logo area - bottom right corner */
+        .logo-area {
+            position: absolute;
+            right: 70px;
+            bottom: 50px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            z-index: 2;
+        }
+
+        /* Bird icon - white on dark */
         .logo-icon {
-            width: 100px;
-            height: 100px;
+            width: 70px;
+            height: 70px;
             display: flex;
             align-items: center;
             justify-content: center;
-            filter: brightness(0) invert(1); /* Makes the logo white */
+            filter: brightness(0) invert(1);
         }
 
         .logo-icon img {
@@ -184,27 +184,10 @@
         }
 
         .logo-text {
-            font-size: 36px;
+            font-size: 32px;
             font-weight: 800;
             color: #ffffff;
             letter-spacing: -0.02em;
-        }
-
-        /* Tagline pill - moved to right side near logo */
-        .tagline {
-            position: absolute;
-            right: 70px;
-            top: 50px;
-            display: inline-block;
-            background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
-            color: #ffffff;
-            font-size: 12px;
-            font-weight: 700;
-            padding: 8px 16px;
-            border-radius: 20px;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            z-index: 2;
         }
 
         /* Bottom accent bar */
@@ -213,26 +196,8 @@
             bottom: 0;
             left: 0;
             width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, transparent 0%, #0891b2 30%, #06b6d4 70%, transparent 100%);
-        }
-
-        /* Dot pattern decoration */
-        .dot-pattern {
-            position: absolute;
-            left: 520px;
-            bottom: 50px;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-            opacity: 0.15;
-        }
-
-        .dot {
-            width: 5px;
-            height: 5px;
-            background: #0891b2;
-            border-radius: 50%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent 0%, #0891b2 35%, #06b6d4 65%, transparent 100%);
         }
     </style>
 </head>
@@ -244,27 +209,19 @@
     </div>
 
     <div class="banner">
-        <!-- Safe zone indicator (hidden by default) -->
-        <div class="safe-zone"></div>
-
         <!-- Decorative elements -->
         <div class="accent-circles"></div>
-        <div class="dot-pattern">
-            <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
-            <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
-            <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
-        </div>
-
-        <!-- Tagline pill - top right -->
-        <div class="tagline">B2B SaaS Growth</div>
 
         <!-- Main content - positioned after safe zone -->
         <div class="banner-content">
-            <h1 class="headline">Creator-Led <span>Pipeline</span><br>Generation</h1>
+            <h1 class="headline">Creator-Led <span>Pipeline</span> Generation</h1>
             <p class="subheadline">LinkedIn Creator Marketing <span class="arrow">→</span> Qualified Meetings</p>
         </div>
 
-        <!-- Logo - right side, prominent -->
+        <!-- Vertical divider -->
+        <div class="divider"></div>
+
+        <!-- Logo - bottom right corner -->
         <div class="logo-area">
             <div class="logo-icon">
                 <img src="Cursor Logo 80-90.png" alt="TetherLabs">
