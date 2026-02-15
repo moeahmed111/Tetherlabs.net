@@ -103,11 +103,11 @@
             left: 10px;
         }
 
-        /* Main content - starts after 500px safe zone */
+        /* Main content - starts after 500px safe zone, shifted up */
         .banner-content {
             position: absolute;
             left: 540px;
-            top: 50%;
+            top: 42%;
             transform: translateY(-50%);
             z-index: 2;
         }
@@ -139,16 +139,17 @@
         }
 
         .subheadline .arrow {
-            color: #0891b2;
+            color: #22d3ee;
             margin: 0 6px;
-            font-weight: 600;
+            font-weight: 700;
+            text-shadow: 0 0 10px rgba(34, 211, 238, 0.4);
         }
 
         /* Vertical divider line */
         .divider {
             position: absolute;
             right: 320px;
-            top: 50%;
+            top: 42%;
             transform: translateY(-50%);
             width: 1px;
             height: 120px;
@@ -160,17 +161,17 @@
         .logo-area {
             position: absolute;
             right: 70px;
-            bottom: 50px;
+            bottom: 45px;
             display: flex;
             align-items: center;
-            gap: 16px;
+            gap: 18px;
             z-index: 2;
         }
 
-        /* Bird icon - white on dark */
+        /* Bird icon - white on dark, ~15% larger */
         .logo-icon {
-            width: 70px;
-            height: 70px;
+            width: 82px;
+            height: 82px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -184,7 +185,7 @@
         }
 
         .logo-text {
-            font-size: 32px;
+            font-size: 38px;
             font-weight: 800;
             color: #ffffff;
             letter-spacing: -0.02em;
