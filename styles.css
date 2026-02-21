@@ -336,12 +336,30 @@ strong {
     max-width: var(--container-max);
     margin: 0 auto;
     padding: 0 var(--space-lg);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-2xl);
+    display: flex;
+    flex-direction: column;
     align-items: center;
     position: relative;
     z-index: 2;
+}
+
+/* Centered hero layout */
+.hero-container.hero-centered {
+    text-align: center;
+}
+
+.hero-container.hero-centered .hero-content {
+    max-width: 800px;
+}
+
+.hero-container.hero-centered .hero-subtitle {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-container.hero-centered .hero-cta {
+    justify-content: center;
 }
 
 .hero-content {
@@ -473,6 +491,87 @@ strong {
     background: var(--color-white);
 }
 
+/* Horizontal Results Layout */
+.results-horizontal {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.result-block {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-xl);
+    padding: var(--space-xl);
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-lg);
+    transition: var(--transition-base);
+}
+
+.result-block:hover {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-card-hover);
+}
+
+.block-icon {
+    flex-shrink: 0;
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--color-bg-blue), #e0f2fe);
+    border-radius: var(--border-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.block-icon i {
+    font-size: 1.75rem;
+    color: var(--color-primary);
+}
+
+.block-content {
+    flex: 1;
+}
+
+.block-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    margin-bottom: var(--space-sm);
+}
+
+.block-number {
+    font-size: var(--font-size-2xl);
+    font-weight: 800;
+    color: var(--color-primary);
+    line-height: 1;
+}
+
+.block-content h3 {
+    font-size: var(--font-size-lg);
+    color: var(--color-dark);
+    margin: 0;
+}
+
+.block-content p {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-light);
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+.step-connector {
+    width: 2px;
+    height: 30px;
+    background: linear-gradient(180deg, var(--color-primary), var(--color-primary-light));
+    margin-left: 58px;
+    border-radius: 1px;
+}
+
+/* Legacy card styles (kept for reference) */
 .results-cards {
     display: grid;
     grid-template-columns: 1fr auto 1fr auto 1fr;
@@ -835,29 +934,37 @@ strong {
 .qualification-list {
     display: flex;
     flex-direction: column;
-    gap: var(--space-md);
+    gap: var(--space-sm);
+    max-width: 650px;
+    margin: 0 auto;
 }
 
 .qualification-list li {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: var(--space-md);
-    font-size: var(--font-size-base);
+    font-size: var(--font-size-sm);
     color: var(--color-text);
-    padding: var(--space-md);
+    padding: var(--space-md) var(--space-lg);
     background: var(--color-bg-light);
     border-radius: var(--border-radius);
     transition: var(--transition-base);
+    text-align: left;
 }
 
 .qualification-list li:hover {
     background: var(--color-bg-blue);
 }
 
+.list-text {
+    flex: 1;
+    line-height: 1.5;
+}
+
 .check-icon {
     flex-shrink: 0;
-    width: 28px;
-    height: 28px;
+    width: 26px;
+    height: 26px;
     background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
     border-radius: 50%;
     display: flex;
@@ -1033,6 +1140,23 @@ strong {
     .card-connector {
         transform: rotate(90deg);
         padding: var(--space-sm) 0;
+    }
+    
+    /* Horizontal results responsive */
+    .result-block {
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+    
+    .step-connector {
+        margin-left: 0;
+        margin: 0 auto;
+    }
+    
+    .block-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-xs);
     }
     
     .stats-cards {
