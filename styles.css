@@ -369,8 +369,8 @@ strong {
 .hero-title {
     font-size: clamp(2.5rem, 5vw, 3.5rem);
     font-weight: 800;
-    line-height: 1.1;
-    margin-bottom: var(--space-lg);
+    line-height: 1.3;
+    margin-bottom: var(--space-xl);
     color: var(--color-dark);
     letter-spacing: -0.02em;
 }
@@ -378,8 +378,8 @@ strong {
 .hero-title-sub {
     display: block;
     color: var(--color-primary);
-    font-size: 0.85em;
-    margin-top: 0.25em;
+    font-size: 0.9em;
+    margin-top: 0.5em;
 }
 
 .hero-subtitle {
@@ -949,7 +949,7 @@ strong {
     background: var(--color-bg-light);
     border-radius: var(--border-radius);
     transition: var(--transition-base);
-    text-align: left;
+        text-align: left;
 }
 
 .qualification-list li:hover {
@@ -1109,7 +1109,7 @@ strong {
         text-align: center;
         gap: var(--space-xl);
     }
-    
+
     .hero-content {
         max-width: 100%;
     }
@@ -1292,7 +1292,7 @@ strong {
         min-height: auto;
         padding: 100px 0 50px;
     }
-    
+
     .hero-title {
         font-size: 1.75rem;
     }
@@ -1300,7 +1300,7 @@ strong {
     .hero-subtitle {
         font-size: var(--font-size-sm);
     }
-    
+
     .btn-primary {
         padding: 14px 28px;
         font-size: var(--font-size-sm);
