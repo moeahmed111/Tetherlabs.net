@@ -7,7 +7,7 @@
     <meta name="google-site-verification" content="amyXJXYOyna91eJAumQTd7SReT4r8JyW5ZlVr9nlc5M" />
     <title>TetherLabs – LinkedIn Creator Marketing for Tech & SaaS</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <!-- Favicons -->
@@ -48,14 +48,8 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <!-- Floating Icons -->
-        <div class="hero-floating-icons">
-            <div class="floating-icon icon-1"><i class="fab fa-linkedin"></i></div>
-            <div class="floating-icon icon-2"><i class="fas fa-comments"></i></div>
-            <div class="floating-icon icon-3"><i class="fas fa-chart-line"></i></div>
-            <div class="floating-icon icon-4"><i class="fas fa-users"></i></div>
-            <div class="floating-icon icon-5"><i class="fas fa-handshake"></i></div>
-        </div>
+        <!-- Background Pattern -->
+        <div class="hero-bg-pattern"></div>
         <div class="hero-container">
             <div class="hero-content">
                 <h1 class="hero-title">Creator-Led Pipeline Generation<br><span class="hero-title-sub">for B2B SaaS</span></h1>
@@ -64,71 +58,94 @@
                     <a href="https://tally.so/r/kdeVDe" target="_blank" class="btn-primary">Schedule a Strategy Call</a>
                 </div>
             </div>
+            <!-- Hero Visual -->
+            <div class="hero-visual-element">
+                <div class="visual-card">
+                    <div class="visual-card-header">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn Campaign</span>
+                    </div>
+                    <div class="visual-metrics">
+                        <div class="metric">
+                            <span class="metric-value">47</span>
+                            <span class="metric-label">Qualified Leads</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">12</span>
+                            <span class="metric-label">Meetings Booked</span>
+                        </div>
+                    </div>
+                    <div class="visual-bar">
+                        <div class="bar-fill"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
-
 
     <!-- How We Drive Results Section -->
     <section id="services" class="drive-results-section">
         <div class="container">
             <div class="section-header">
                 <h2>How We Drive Results</h2>
+                <p class="section-subtitle">Our proven three-step process to generate qualified pipeline</p>
             </div>
             
-            <!-- Cycle Graphic - Circular Loop -->
-            <div class="cycle-graphic">
-                <div class="cycle-ring">
-                    <!-- Animated rotating ring -->
-                    <svg class="cycle-ring-svg" viewBox="0 0 300 300">
-                        <defs>
-                            <linearGradient id="ringGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
-                                <stop offset="50%" style="stop-color:#8b5cf6;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#10b981;stop-opacity:1" />
-                            </linearGradient>
-                        </defs>
-                        <circle class="ring-bg" cx="150" cy="150" r="120" />
-                        <circle class="ring-progress" cx="150" cy="150" r="120" />
-                    </svg>
-                    
-                    <!-- Center text -->
-                    <div class="cycle-center">
-                        <span>Continuous</span>
-                        <span>Growth</span>
+            <div class="results-cards">
+                <!-- Card 1 -->
+                <div class="result-card">
+                    <div class="card-icon">
+                        <i class="fas fa-crosshairs"></i>
                     </div>
-                    
-                    <!-- Nodes positioned around the ring -->
-                    <div class="cycle-node node-creator">
-                        <div class="node-icon"><i class="fas fa-user-tie"></i></div>
-                        <span>Creator</span>
-                    </div>
-                    <div class="cycle-node node-content">
-                        <div class="node-icon"><i class="fas fa-pen-fancy"></i></div>
-                        <span>Content</span>
-                    </div>
-                    <div class="cycle-node node-pipeline">
-                        <div class="node-icon"><i class="fas fa-chart-line"></i></div>
-                        <span>Pipeline</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="drive-results-content">
-                <div class="drive-item">
-                    <span class="drive-number">01</span>
+                    <span class="card-number">01</span>
                     <h3>Strategic Creator Partnerships</h3>
-                    <p class="drive-description">We identify LinkedIn creators whose audiences match your ICP. No vanity metrics, just relevant reach. We vet creators based on audience demographics, engagement quality, and content relevance, ensuring your message reaches decision-makers who are already engaged and paying attention.</p>
+                    <p>We identify LinkedIn creators whose audiences match your ICP. No vanity metrics, just relevant reach. We vet creators based on audience demographics, engagement quality, and content relevance, ensuring your message reaches decision-makers who are already engaged and paying attention.</p>
                 </div>
-                <div class="drive-item">
-                    <span class="drive-number">02</span>
+                
+                <!-- Connector -->
+                <div class="card-connector">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="result-card">
+                    <div class="card-icon">
+                        <i class="fas fa-pen-nib"></i>
+                    </div>
+                    <span class="card-number">02</span>
                     <h3>Creator-Led Content Strategy</h3>
-                    <p class="drive-description">We brief creators on your positioning, key messages, and calls-to-action, then manage the entire content process. From educational posts to case studies to product breakdowns, we ensure every piece drives awareness and engagement with your target ICP while maintaining authentic creator voice.</p>
+                    <p>We brief creators on your positioning, key messages, and calls-to-action, then manage the entire content process. From educational posts to case studies to product breakdowns, we ensure every piece drives awareness and engagement with your target ICP while maintaining authentic creator voice.</p>
                 </div>
-                <div class="drive-item">
-                    <span class="drive-number">03</span>
+                
+                <!-- Connector -->
+                <div class="card-connector">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="result-card">
+                    <div class="card-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <span class="card-number">03</span>
                     <h3>Pipeline Generation</h3>
-                    <p class="drive-description">We monitor engagement, identify prospects showing intent, validate ICP fit using enriched firmographic data, and reach out with personalized LinkedIn sequences. Using their comments and activity as conversation starters, we book qualified meetings for your team, turning intent signals into sales opportunities.</p>
+                    <p>We monitor engagement, identify prospects showing intent, validate ICP fit using enriched firmographic data, and reach out with personalized LinkedIn sequences. Using their comments and activity as conversation starters, we book qualified meetings for your team, turning intent signals into sales opportunities.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Logos Section (Hidden - Ready to Unhide) -->
+    <section id="clients" class="clients-section hidden">
+        <div class="container">
+            <h2>Trusted By</h2>
+            <div class="logo-grid">
+                <div class="logo-placeholder"></div>
+                <div class="logo-placeholder"></div>
+                <div class="logo-placeholder"></div>
+                <div class="logo-placeholder"></div>
+                <div class="logo-placeholder"></div>
+                <div class="logo-placeholder"></div>
             </div>
         </div>
     </section>
@@ -138,26 +155,82 @@
         <div class="container">
             <div class="section-header">
                 <h2>Built on Proven Strategy</h2>
+                <p class="section-subtitle">Data-backed insights that drive our approach</p>
             </div>
-            <div class="research-cards">
-                <div class="research-card">
-                    <h3>B2B buyers use 10+ channels before purchasing</h3>
-                    <p>According to McKinsey, your prospects are researching across multiple platforms. You need trusted voices meeting them where they're active, especially on LinkedIn.</p>
-                </div>
-                <div class="research-card">
-                    <h3>93.7% of B2B marketers say trust is the #1 success factor</h3>
-                    <p>LinkedIn's 2025 benchmark found that product features and pricing matter, but without trust, they don't convert.</p>
-                </div>
-                <div class="research-card">
+            <div class="stats-cards">
+                <!-- Stat Card 1 -->
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-number">62%</div>
                     <h3>Being "category famous" beats broad awareness</h3>
                     <p>LinkedIn research shows 62% of marketers say peer recommendations matter more than widespread visibility. Being recognized by the right people is worth twice as much as being a household name.</p>
+                    <span class="stat-source">Source: LinkedIn B2B Research</span>
                 </div>
-                <div class="research-card">
-                    <h3>95% of hidden buyers become receptive to outreach</h3>
+                
+                <!-- Stat Card 2 -->
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div class="stat-number">95%</div>
+                    <h3>Hidden buyers become receptive to outreach</h3>
                     <p>Edelman found that most buyers research long before talking to sales. Strong thought leadership makes them receptive to outreach they'd normally ignore. 79% actively champion new vendors when it's decision time.</p>
+                    <span class="stat-source">Source: Edelman Trust Barometer</span>
                 </div>
             </div>
             <p class="why-it-works-cta">This is why our approach works: creator campaigns reach buying teams during research, then we convert engagement into meetings.</p>
+        </div>
+    </section>
+
+    <!-- Testimonials Section (Hidden - Ready to Unhide) -->
+    <section id="testimonials" class="testimonials-section hidden">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Our Partners Say</h2>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"Placeholder testimonial text. Replace with actual client feedback about working with TetherLabs and the results achieved."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-photo"></div>
+                        <div class="author-info">
+                            <strong>Client Name</strong>
+                            <span>Title, Company</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"Placeholder testimonial text. Replace with actual client feedback about working with TetherLabs and the results achieved."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-photo"></div>
+                        <div class="author-info">
+                            <strong>Client Name</strong>
+                            <span>Title, Company</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"Placeholder testimonial text. Replace with actual client feedback about working with TetherLabs and the results achieved."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-photo"></div>
+                        <div class="author-info">
+                            <strong>Client Name</strong>
+                            <span>Title, Company</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -166,17 +239,27 @@
         <div class="container">
             <div class="section-header">
                 <h2>What We Offer</h2>
+                <p class="section-subtitle">Comprehensive services to drive your B2B growth</p>
             </div>
-            <div class="services-content">
-                <div class="service-item">
+            <div class="services-grid">
+                <!-- Service Card 1 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fab fa-linkedin"></i>
+                    </div>
                     <span class="service-number">01</span>
                     <h3>LinkedIn Creator Campaigns</h3>
-                    <p class="service-description">Full-service creator marketing from strategy to closed deals. We source ICP-matched creators, manage content briefings and approvals, track performance with custom UTMs, and convert engagement into pipeline. Our outreach sequences use comment activity and enriched data to book qualified meetings with your sales team.</p>
+                    <p>Full-service creator marketing from strategy to closed deals. We source ICP-matched creators, manage content briefings and approvals, track performance with custom UTMs, and convert engagement into pipeline. Our outreach sequences use comment activity and enriched data to book qualified meetings with your sales team.</p>
                 </div>
-                <div class="service-item">
+                
+                <!-- Service Card 2 -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-envelope-open-text"></i>
+                    </div>
                     <span class="service-number">02</span>
                     <h3>Newsletter Sponsorships</h3>
-                    <p class="service-description">Scale beyond LinkedIn with sponsorships in B2B newsletters your ICP reads. We handle sourcing, rate negotiations, content coordination, and performance tracking across impressions, clicks, and conversions.</p>
+                    <p>Scale beyond LinkedIn with sponsorships in B2B newsletters your ICP reads. We handle sourcing, rate negotiations, content coordination, and performance tracking across impressions, clicks, and conversions.</p>
                 </div>
             </div>
         </div>
@@ -191,15 +274,26 @@
             <div class="qualification-content">
                 <p class="intro-text">This works best for Tech & SaaS companies that:</p>
                 <ul class="qualification-list">
-                    <li>Want to <strong>reach decision-makers on LinkedIn</strong> (Founders, CMOs, VPs of Marketing)</li>
-                    <li>Are ready to <strong>invest in strategic content partnerships</strong></li>
-                    <li>Need <strong>measurable performance</strong>: traffic, engagement, and qualified leads</li>
-                    <li>Want a <strong>partner who handles everything</strong> from strategy to execution</li>
+                    <li>
+                        <span class="check-icon"><i class="fas fa-check"></i></span>
+                        Want to <strong>reach decision-makers on LinkedIn</strong> (Founders, CMOs, VPs of Marketing)
+                    </li>
+                    <li>
+                        <span class="check-icon"><i class="fas fa-check"></i></span>
+                        Are ready to <strong>invest in strategic content partnerships</strong>
+                    </li>
+                    <li>
+                        <span class="check-icon"><i class="fas fa-check"></i></span>
+                        Need <strong>measurable performance</strong>: traffic, engagement, and qualified leads
+                    </li>
+                    <li>
+                        <span class="check-icon"><i class="fas fa-check"></i></span>
+                        Want a <strong>partner who handles everything</strong> from strategy to execution
+                    </li>
                 </ul>
             </div>
         </div>
     </section>
-
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
