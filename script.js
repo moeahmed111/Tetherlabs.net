@@ -1,209 +1,143 @@
-// Minimal JavaScript - No complex animations
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     initNavigation();
     initSmoothScrolling();
     initMobileMenu();
-    initScrollAnimations();
+    initFadeInSections();
     initCounterAnimations();
-    initAccordion();
 });
 
-// Navigation functionality
+// ─── Navigation ────────────────────────────────────────────────────────────
 function initNavigation() {
     const navbar = document.getElementById('navbar');
-    
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 100) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
+
+    window.addEventListener('scroll', function () {
+        navbar.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
 }
 
-// Simple smooth scrolling
+// ─── Smooth scrolling ──────────────────────────────────────────────────────
 function initSmoothScrolling() {
-    const navLinks = document.querySelectorAll('a[href^="#"]');
-    
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener('click', function (e) {
+            const target = document.querySelector(this.getAttribute('href'));
+            if (!target) return;
             e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            
-            if (targetSection) {
-                // Close mobile menu
-                const navMenu = document.querySelector('.nav-menu');
-                const hamburger = document.querySelector('.hamburger');
-                if (navMenu && hamburger) {
-                    navMenu.classList.remove('active');
-                    hamburger.classList.remove('active');
-                }
-                
-                // Simple scroll
-                const targetPosition = targetSection.offsetTop - 80;
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-            }
+
+            // Close mobile menu
+            document.querySelector('.nav-menu')?.classList.remove('active');
+            document.querySelector('.hamburger')?.classList.remove('active');
+
+            window.scrollTo({
+                top: target.offsetTop - 76,
+                behavior: 'smooth'
+            });
         });
     });
 }
 
-// Mobile menu - Dropdown
+// ─── Mobile menu ───────────────────────────────────────────────────────────
 function initMobileMenu() {
     const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-menu');
-    
-    if (hamburger && navMenu) {
-        hamburger.addEventListener('click', function() {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
-        
-        // Close menu when clicking outside
-        document.addEventListener('click', function(e) {
-            if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('active');
-            }
-        });
-        
-        // Close menu when clicking a nav link
-        navMenu.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', function() {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('active');
-            });
-        });
-    }
-}
+    const navMenu   = document.querySelector('.nav-menu');
+    if (!hamburger || !navMenu) return;
 
-// Scroll animations for service cards
-function initScrollAnimations() {
-    // Check if device is mobile
-    const isMobile = window.innerWidth <= 768;
-    
-    if (!isMobile) {
-        const serviceCards = document.querySelectorAll('.service-card');
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, {
-            threshold: 0.3,
-            rootMargin: '0px 0px -50px 0px'
-        });
-        
-        serviceCards.forEach(card => {
-            observer.observe(card);
-        });
-    }
-}
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
 
-// Counter Animation for Campaign Results with Scroll Effects
-function initCounterAnimations() {
-    const counters = document.querySelectorAll('.metric-number');
-    const linkedinGraphic = document.querySelector('.linkedin-icon-graphic');
-    const influenceFlow = document.querySelector('.influence-flow');
-    
-    const animateCounter = (counter) => {
-        const target = parseFloat(counter.getAttribute('data-target'));
-        const duration = 2000; // 2 seconds
-        const increment = target / (duration / 16); // 60fps
-        let current = 0;
-        
-        const updateCounter = () => {
-            current += increment;
-            if (current < target) {
-                counter.textContent = target < 10 ? current.toFixed(1) : Math.floor(current);
-                requestAnimationFrame(updateCounter);
-            } else {
-                counter.textContent = target < 10 ? target.toFixed(1) : target;
-                counter.classList.add('animate');
-            }
-        };
-        
-        updateCounter();
-    };
-    
-    // Enhanced scroll-triggered animations
-    const heroSection = document.querySelector('.hero');
-    if (heroSection) {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    // Animate counters
-                    counters.forEach(counter => {
-                        animateCounter(counter);
-                    });
-                    
-                    // Add scroll-based animations
-                    if (linkedinGraphic) {
-                        linkedinGraphic.style.animation = 'float 6s ease-in-out infinite, scroll-pulse 8s ease-in-out infinite';
-                    }
-                    
-                    if (influenceFlow) {
-                        influenceFlow.style.animation = 'pulse-flow 4s ease-in-out infinite, scroll-glow 6s ease-in-out infinite';
-                    }
-                    
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, {
-            threshold: 0.3
-        });
-        
-        observer.observe(heroSection);
-    }
-    
-    // Add scroll-based movement to metrics
-    window.addEventListener('scroll', () => {
-        const scrollY = window.scrollY;
-        const metricsDisplay = document.querySelector('.metrics-display');
-        
-        if (metricsDisplay && scrollY < 500) {
-            const moveAmount = scrollY * 0.1;
-            metricsDisplay.style.transform = `translateY(${moveAmount}px)`;
+    document.addEventListener('click', (e) => {
+        if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
         }
+    });
+
+    navMenu.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
     });
 }
 
-// Toggle Read More for service descriptions on mobile
+// ─── Scroll fade-in for every section ──────────────────────────────────────
+function initFadeInSections() {
+    const sections = document.querySelectorAll('.fade-in-section');
+    if (!sections.length) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.08,
+        rootMargin: '0px 0px -40px 0px'
+    });
+
+    sections.forEach(s => observer.observe(s));
+}
+
+// ─── Count-up animation ────────────────────────────────────────────────────
+//  Works for any element with data-target (integer) + data-suffix (string).
+//  Optional data-from sets the starting value (default 0).
+function initCounterAnimations() {
+    const counters = document.querySelectorAll('[data-target]');
+    if (!counters.length) return;
+
+    const animateCounter = (el) => {
+        const target   = parseFloat(el.getAttribute('data-target'));
+        const from     = parseFloat(el.getAttribute('data-from') ?? '0');
+        const suffix   = el.getAttribute('data-suffix') ?? '';
+        const duration = 1800; // ms
+        const startTime = performance.now();
+        const isInt    = Number.isInteger(target) && Number.isInteger(from);
+
+        const tick = (now) => {
+            const elapsed  = now - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            // Ease-out cubic
+            const eased    = 1 - Math.pow(1 - progress, 3);
+            const current  = from + (target - from) * eased;
+
+            el.textContent = (isInt ? Math.round(current) : current.toFixed(1)) + suffix;
+
+            if (progress < 1) {
+                requestAnimationFrame(tick);
+            } else {
+                el.textContent = target + suffix;
+            }
+        };
+
+        requestAnimationFrame(tick);
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounter(entry.target);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.3
+    });
+
+    counters.forEach(el => observer.observe(el));
+}
+
+// ─── Legacy helpers (kept for any existing calls) ──────────────────────────
 function toggleReadMore(button) {
     const description = button.previousElementSibling;
-    const isExpanded = description.classList.contains('expanded');
-    
-    if (isExpanded) {
-        description.classList.remove('expanded');
-        button.textContent = 'Read more';
-    } else {
-        description.classList.add('expanded');
-        button.textContent = 'Read less';
-    }
+    const expanded    = description.classList.toggle('expanded');
+    button.textContent = expanded ? 'Read less' : 'Read more';
 }
 
-// Toggle Deliverables for How We Drive Results section
 function toggleDeliverables(button) {
     const content = button.nextElementSibling;
-    const isOpen = content.classList.contains('open');
-    
-    if (isOpen) {
-        content.classList.remove('open');
-        button.classList.remove('active');
-    } else {
-        content.classList.add('open');
-        button.classList.add('active');
-    }
-}
-
-// Accordion functionality - disabled on mobile (content always visible)
-function initAccordion() {
-    // No accordion behavior needed - all content is visible by default
-    return;
+    const open    = content.classList.toggle('open');
+    button.classList.toggle('active', open);
 }
