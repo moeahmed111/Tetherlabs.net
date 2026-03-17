@@ -50,8 +50,8 @@
     --space-lg:  2rem;
     --space-xl:  3rem;
     --space-2xl: 4rem;
-    --space-section: 100px;
-    --space-section-mobile: 60px;
+    --space-section: 120px;
+    --space-section-mobile: 80px;
 
     /* Layout */
     --container-max:    1200px;
@@ -472,7 +472,7 @@ strong {
 .metrics-bar {
     display: grid;
     grid-template-columns: 1fr auto 1fr auto 1fr;
-    align-items: start;
+    align-items: center;
     gap: 0;
 }
 
@@ -509,6 +509,7 @@ strong {
     display: inline-block;
     line-height: 1;
     font-variant-numeric: tabular-nums;
+    white-space: nowrap;
 }
 
 /* Range metric  e.g.  "2% → 20%" */
@@ -516,8 +517,9 @@ strong {
     display: inline-flex;
     align-items: center;
     gap: 0.3em;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
+    white-space: nowrap;
 }
 
 .metric-arrow {
@@ -661,13 +663,15 @@ strong {
     color: var(--color-heading);
 }
 
-/* Desktop: 3 cards + 2 arrow connectors in a single row */
+/* Vertical stack of cards */
 .timeline-stepper {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr auto 1fr;
-    align-items: stretch;
+    display: flex;
+    flex-direction: column;
     gap: 0;
     margin-top: var(--space-2xl);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* ── Card ── */
@@ -676,7 +680,7 @@ strong {
     border: 1px solid var(--color-border);
     border-left: 3px solid var(--color-primary);
     border-radius: var(--border-radius-lg);
-    padding: var(--space-2xl);
+    padding: 36px 40px;
     position: relative;
     overflow: hidden;
     transition: border-color var(--transition-base), box-shadow var(--transition-base);
@@ -688,30 +692,25 @@ strong {
     box-shadow: var(--shadow-card-hover);
 }
 
-/* Large lightly-opaque watermark number */
+/* Large lightly-opaque watermark number — hidden */
 .timeline-watermark {
-    position: absolute;
-    bottom: -0.15em;
-    right: 0.05em;
-    font-size: clamp(5rem, 10vw, 9rem);
-    font-weight: 900;
-    color: var(--color-heading);
-    opacity: 0.045;
-    line-height: 1;
-    letter-spacing: -0.05em;
-    pointer-events: none;
-    user-select: none;
-    font-variant-numeric: tabular-nums;
+    display: none;
 }
 
-/* Month tag */
+/* Month tag — badge style */
 .timeline-month {
-    font-size: var(--font-size-xs);
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.75rem;
     font-weight: 700;
     color: var(--color-accent);
     text-transform: uppercase;
-    letter-spacing: 0.16em;
-    margin-bottom: var(--space-sm);
+    letter-spacing: 0.14em;
+    margin-bottom: var(--space-md);
+    background: rgba(8, 145, 178, 0.12);
+    border: 1px solid rgba(8, 145, 178, 0.3);
+    border-radius: 20px;
+    padding: 4px 12px;
 }
 
 .timeline-title {
@@ -767,45 +766,25 @@ strong {
 .timeline-connector {
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 0 var(--space-md);
-    flex-shrink: 0;
+    justify-content: flex-start;
+    padding: 6px 0 6px 43px; /* align with card body (40px padding + 3px border) */
     color: var(--color-primary);
     font-size: 1.25rem;
     opacity: 0.75;
-    /* vertically centered within the card row */
-    align-self: center;
-    /* Give arrow a subtle animated glow */
     filter: drop-shadow(0 0 6px rgba(8, 145, 178, 0.6));
 }
 
-/* ── Responsive — vertical stack ── */
-@media (max-width: 1024px) {
-    .timeline-stepper {
-        grid-template-columns: 1fr;
-    }
-
-    .timeline-connector {
-        padding: 4px 0 4px var(--space-xl);
-        justify-content: flex-start;
-    }
-
-    .timeline-connector i {
-        transform: rotate(90deg);
-    }
-
-    .timeline-card--final {
-        animation: timelinePulse 3.2s ease-in-out infinite;
-    }
+.timeline-connector i {
+    transform: rotate(90deg);
 }
 
 @media (max-width: 768px) {
     .timeline-card {
-        padding: var(--space-xl);
+        padding: 28px 24px;
     }
 
     .timeline-connector {
-        padding-left: calc(var(--space-xl) + 3px); /* align arrow with card body */
+        padding-left: 27px; /* 24px padding + 3px border */
     }
 }
 
@@ -824,9 +803,9 @@ strong {
 .growth-loop-svg {
     display: block;
     width: 100%;
-    max-width: 880px;
+    max-width: 1000px;
     height: auto;
-    margin: 0 auto;
+    margin: var(--space-2xl) auto 0;
     overflow: visible; /* let drop-shadows bleed outside viewBox */
 }
 
@@ -1176,7 +1155,7 @@ strong {
 .services-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-xl);
+    gap: var(--space-2xl);
     max-width: 1100px;
     margin: 0 auto;
 }
@@ -1184,7 +1163,7 @@ strong {
 .service-card {
     background: var(--color-bg-card);
     border-radius: var(--border-radius-lg);
-    padding: var(--space-2xl);
+    padding: 40px;
     border: 1px solid var(--color-border);
     transition: border-color var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base);
     position: relative;
@@ -1227,12 +1206,13 @@ strong {
 
 .service-card h3 {
     font-size: var(--font-size-xl);
+    font-weight: 800;
     margin-bottom: var(--space-md);
     color: var(--color-heading);
 }
 
 .service-card p {
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-base);
     color: var(--color-text);
     line-height: 1.7;
     margin-bottom: 0;
@@ -1373,12 +1353,12 @@ strong {
 
 /* TetherLabs column: cyan top border + subtle primary tint */
 .colhead-tether {
-    background: rgba(8, 145, 178, 0.07);
+    background: rgba(8, 145, 178, 0.1);
     color: var(--color-accent);
-    border-top: 2px solid var(--color-accent);
-    /* pull the cell up 2px to compensate for top border so rows align */
-    margin-top: -2px;
-    padding-top: calc(var(--space-md) + 2px);
+    border-top: 3px solid var(--color-accent);
+    /* pull the cell up 3px to compensate for top border so rows align */
+    margin-top: -3px;
+    padding-top: calc(var(--space-md) + 3px);
 }
 
 /* ── Data rows ── */
@@ -1417,7 +1397,7 @@ strong {
     display: flex;
     align-items: flex-start;
     gap: 10px;
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-base);
     line-height: 1.6;
 }
 
@@ -1883,7 +1863,7 @@ strong {
 
 /* Tablets */
 @media (max-width: 768px) {
-    :root { --space-section: 70px; }
+    :root { --space-section: 80px; }
 
     h1 { font-size: var(--font-size-2xl); }
     h2 { font-size: var(--font-size-xl); }
@@ -1954,7 +1934,7 @@ strong {
 
 /* Mobile */
 @media (max-width: 480px) {
-    :root { --space-section: 55px; }
+    :root { --space-section: 60px; }
 
     .hero { min-height: auto; padding: 100px 0 55px; }
     .hero-title { font-size: 2rem; }
