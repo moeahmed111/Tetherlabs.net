@@ -1322,209 +1322,177 @@ strong {
     color: var(--color-heading);
 }
 
-/* Outer table wrapper */
-.comparison-table {
+/* Column label header row — mirrors card structure */
+.comparison-col-headers {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    max-width: 960px;
+    margin: 0 auto var(--space-md);
+    padding: 0 40px;
+}
+
+.comparison-col-header-spacer {
+    flex: 0 0 200px;
+}
+
+.comparison-col-header {
+    flex: 1;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    text-align: center;
+}
+
+.comparison-col-header--inhouse {
+    color: var(--color-text-light);
+}
+
+.comparison-col-header--tether {
+    color: var(--color-accent);
+}
+
+/* Vertical list of cards */
+.comparison-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     max-width: 960px;
     margin: 0 auto;
-    border: 1px solid var(--color-border-subtle);
-    border-radius: var(--border-radius-lg);
-    overflow: hidden;
 }
 
-/* ── Column headers ── */
-.comparison-colheads {
-    display: grid;
-    grid-template-columns: 190px 1fr 1fr;
-}
-
-.colhead-category {
+.comparison-card {
+    display: flex;
+    align-items: stretch;
+    gap: 40px;
     background: var(--color-bg-card);
-    border-right: 1px solid var(--color-border-subtle);
+    border: 1px solid rgba(8, 145, 178, 0.2);
+    border-left: 3px solid var(--color-primary);
+    border-radius: var(--border-radius-lg);
+    padding: 40px;
+    transition: border-color var(--transition-base), box-shadow var(--transition-base);
 }
 
-.colhead {
-    padding: var(--space-md) var(--space-lg);
-    font-size: var(--font-size-sm);
-    font-weight: 700;
-    text-align: center;
-    letter-spacing: 0.01em;
+.comparison-card:hover {
+    border-color: rgba(34, 211, 238, 0.4);
+    border-left-color: var(--color-accent);
+    box-shadow: var(--shadow-card-hover);
 }
 
-.colhead-inhouse {
-    background: var(--color-bg-alt);
-    color: var(--color-text-light);
-    border-right: 1px solid var(--color-border-subtle);
-}
-
-/* TetherLabs column: cyan top border + subtle primary tint */
-.colhead-tether {
-    background: rgba(8, 145, 178, 0.1);
-    color: var(--color-accent);
-    border-top: 3px solid var(--color-accent);
-    /* pull the cell up 3px to compensate for top border so rows align */
-    margin-top: -3px;
-    padding-top: calc(var(--space-md) + 3px);
-}
-
-/* ── Data rows ── */
-.comparison-row {
-    display: grid;
-    grid-template-columns: 190px 1fr 1fr;
-    border-top: 1px solid var(--color-border-subtle);
-    transition: background var(--transition-fast);
-}
-
-.comparison-row:hover .row-category,
-.comparison-row:hover .cell-inhouse {
-    background: rgba(255, 255, 255, 0.015);
-}
-
-.comparison-row:hover .cell-tether {
-    background: rgba(8, 145, 178, 0.09);
-}
-
-/* Category label column */
-.row-category {
-    padding: var(--space-lg);
-    font-size: var(--font-size-sm);
+/* Category label — fixed left column */
+.comparison-card-category {
+    flex: 0 0 200px;
+    font-size: 1rem;
     font-weight: 700;
     color: var(--color-heading);
     display: flex;
     align-items: center;
-    background: var(--color-bg-card);
-    border-right: 1px solid var(--color-border-subtle);
-    line-height: 1.35;
+    line-height: 1.3;
 }
 
-/* Cell shared */
-.row-cell {
-    padding: var(--space-lg);
+/* Two-column right side */
+.comparison-card-cols {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+/* Individual column */
+.cmp-col {
     display: flex;
     align-items: flex-start;
     gap: 10px;
-    font-size: var(--font-size-base);
-    line-height: 1.6;
+    font-size: 1rem;
+    line-height: 1.65;
 }
 
-.cell-inhouse {
-    background: var(--color-bg-alt);
+.cmp-col--inhouse {
     color: var(--color-text-light);
-    border-right: 1px solid var(--color-border-subtle);
 }
 
-.cell-tether {
-    background: rgba(8, 145, 178, 0.05);
+.cmp-col--tether {
     color: var(--color-text);
-    border-left: 1px solid rgba(8, 145, 178, 0.2);
 }
 
-.cell-text {
+.cmp-text {
     flex: 1;
-    padding-top: 1px; /* optical alignment with indicator icon */
+    padding-top: 1px;
 }
 
-/* ── Indicators ── */
-.cell-indicator {
+/* Indicators */
+.cmp-indicator {
     flex-shrink: 0;
-    width: 22px;
-    height: 22px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.65rem;
-    margin-top: 1px;
+    font-size: 0.6rem;
+    margin-top: 2px;
 }
 
-.indicator-dash {
+.cmp-indicator--dash {
     background: rgba(107, 114, 128, 0.12);
     color: #6b7280;
 }
 
-.indicator-check {
+.cmp-indicator--check {
     background: rgba(34, 211, 238, 0.12);
     color: #22d3ee;
-    box-shadow: 0 0 8px rgba(34, 211, 238, 0.25);
+    box-shadow: 0 0 8px rgba(34, 211, 238, 0.2);
 }
 
-/* ── Mobile: each row becomes a card ── */
+/* ── Mobile ── */
 @media (max-width: 767px) {
-    .comparison-table {
-        border: none;
-        background: transparent;
-        overflow: visible;
+    .comparison-col-headers {
+        display: none;
     }
 
-    .comparison-colheads {
-        display: none; /* column labels shown inline per card */
-    }
-
-    /* Card layout: category spans full width, cells side by side below */
-    .comparison-row {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto 1fr;
-        background: var(--color-bg-card);
-        border: 1px solid var(--color-border);
-        border-radius: var(--border-radius-lg);
-        margin-bottom: var(--space-md);
-        overflow: hidden;
-        transition: border-color var(--transition-base);
-        border-top: 1px solid var(--color-border); /* reset desktop override */
-    }
-
-    .comparison-row .row-category {
-        grid-column: 1 / -1; /* span both columns → full-width card header */
-        background: rgba(255, 255, 255, 0.03);
-        border-right: none;
-        border-bottom: 1px solid var(--color-border-subtle);
-        border-left: 3px solid var(--color-primary);
-        padding: var(--space-md) var(--space-lg);
-    }
-
-    .comparison-row .cell-inhouse,
-    .comparison-row .cell-tether {
+    .comparison-card {
         flex-direction: column;
-        gap: var(--space-sm);
-        padding: var(--space-md);
-        border: none;
-        align-items: flex-start;
+        gap: 20px;
+        padding: 28px 24px;
     }
 
-    .comparison-row .cell-inhouse {
-        border-right: 1px solid var(--color-border-subtle);
-        background: transparent;
-        color: var(--color-text-light);
+    .comparison-card-category {
+        flex: none;
+        width: 100%;
+        font-size: 1rem;
+        padding-bottom: 16px;
+        border-bottom: 1px solid var(--color-border-subtle);
     }
 
-    .comparison-row .cell-tether {
-        background: rgba(8, 145, 178, 0.06);
-        border-top: 2px solid var(--color-accent);
-        margin-top: -2px;
-        padding-top: calc(var(--space-md) + 2px);
+    .comparison-card-cols {
+        gap: 16px;
     }
 
-    /* Inline column labels on mobile */
-    .cell-inhouse::before {
+    .cmp-col {
+        position: relative;
+    }
+
+    .cmp-col--inhouse::before {
         content: 'In-House';
         display: block;
-        font-size: 0.7rem;
+        font-size: 0.65rem;
         font-weight: 700;
         color: var(--color-text-light);
         text-transform: uppercase;
-        letter-spacing: 0.12em;
-        margin-bottom: 2px;
+        letter-spacing: 0.1em;
+        margin-bottom: 4px;
     }
 
-    .cell-tether::before {
+    .cmp-col--tether::before {
         content: 'TetherLabs';
         display: block;
-        font-size: 0.7rem;
+        font-size: 0.65rem;
         font-weight: 700;
         color: var(--color-accent);
         text-transform: uppercase;
-        letter-spacing: 0.12em;
-        margin-bottom: 2px;
+        letter-spacing: 0.1em;
+        margin-bottom: 4px;
     }
 }
 
