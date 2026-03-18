@@ -544,8 +544,9 @@ strong {
 .metric-desc {
     font-size: 14px;
     font-weight: 400;
-    color: #e2e8f0;
-    line-height: 1.7;
+    font-style: normal;
+    color: #94a3b8;
+    line-height: 1.6;
     margin: 0;
     max-width: 180px;
     text-align: left;
