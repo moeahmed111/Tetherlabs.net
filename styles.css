@@ -542,11 +542,13 @@ strong {
 
 /* Supporting text */
 .metric-desc {
-    font-size: 14px;
-    font-weight: 400;
+    font-size: 13px;
+    font-weight: 500;
     font-style: normal;
     color: #94a3b8;
-    line-height: 1.6;
+    line-height: 1.8;
+    letter-spacing: 0.2px;
+    text-transform: none;
     margin: 20px 0 0;
     padding-top: 20px;
     border-top: 1px solid #1e3a4a;
