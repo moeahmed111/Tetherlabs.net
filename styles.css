@@ -533,7 +533,7 @@ strong {
 /* Label */
 .metric-label {
     font-size: 1rem;
-    font-weight: 700;
+    font-weight: 600;
     color: #ffffff;
     margin-bottom: var(--space-sm);
     line-height: 1.3;
@@ -542,15 +542,13 @@ strong {
 
 /* Supporting text */
 .metric-desc {
-    font-size: 0.9375rem; /* 15px */
+    font-size: 14px;
     font-weight: 400;
     color: #e2e8f0;
-    line-height: 1.8;
-    margin-bottom: 0;
-    max-width: 220px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
+    line-height: 1.7;
+    margin: 0;
+    max-width: 180px;
+    text-align: left;
 }
 
 /* ============================================
