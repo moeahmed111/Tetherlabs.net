@@ -491,25 +491,21 @@ strong {
 }
 
 .metric-item {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     padding: 0 var(--space-lg);
-    vertical-align: top;
     align-self: flex-start;
-    padding-top: 0;
 }
 
 /* The large number(s) */
 .metric-display {
-    height: 120px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     margin-bottom: var(--space-sm);
     line-height: 1;
 }
 
 .metric-num {
-    font-size: clamp(3.2rem, 6vw, 5rem);
+    font-size: 4rem;
     font-weight: 900;
     color: var(--color-accent);
     letter-spacing: -0.04em;
