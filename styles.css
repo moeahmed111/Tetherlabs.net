@@ -543,10 +543,11 @@ strong {
 /* Supporting text */
 .metric-desc {
     font-size: 0.9375rem; /* 15px */
-    color: #cbd5e1;
-    line-height: 1.6;
+    font-weight: 400;
+    color: #e2e8f0;
+    line-height: 1.8;
     margin-bottom: 0;
-    max-width: 280px;
+    max-width: 220px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
