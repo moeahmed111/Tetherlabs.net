@@ -739,6 +739,9 @@ strong {
     margin-bottom: 0;
     position: relative;
     z-index: 1;
+    border-left: 2px solid rgba(34, 211, 238, 0.2);
+    padding-left: 16px;
+    margin-left: 2px;
 }
 
 /* ── Final card — cyan glow + repeating pulse ── */
@@ -798,13 +801,66 @@ strong {
 }
 
 /* ============================================
+   MID-PAGE CTA STRIP
+   ============================================ */
+.mid-cta-section {
+    padding: 56px 0;
+    background: linear-gradient(135deg, #060c1a 0%, #0c1628 50%, #060c1a 100%);
+    border-top: 1px solid rgba(34, 211, 238, 0.12);
+    border-bottom: 1px solid rgba(34, 211, 238, 0.12);
+    position: relative;
+    overflow: hidden;
+}
+
+.mid-cta-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 200px;
+    background: radial-gradient(ellipse, rgba(8, 145, 178, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.mid-cta-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-xl);
+    position: relative;
+    z-index: 1;
+}
+
+.mid-cta-eyebrow {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: var(--color-heading);
+    margin: 0;
+    line-height: 1.3;
+    flex: 1;
+}
+
+@media (max-width: 767px) {
+    .mid-cta-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .mid-cta-eyebrow {
+        font-size: var(--font-size-base);
+    }
+}
+
+/* ============================================
    GROWTH LOOP DIAGRAM SECTION
    ============================================ */
 
-/* Section background alternates: timeline is bg-alt → this is bg */
+/* Section background alternates: services is bg → this is bg-alt */
 .growth-loop-section {
     padding: var(--space-section) 0;
-    background: var(--color-bg);
+    background: var(--color-bg-alt);
     position: relative;
 }
 
