@@ -403,7 +403,7 @@ strong {
 .hero-container.hero-centered            { text-align: center; }
 .hero-container.hero-centered .hero-content { max-width: 900px; }
 .hero-container.hero-centered .hero-subtitle {
-    max-width: 640px;
+    max-width: 900px;
     margin-left: auto;
     margin-right: auto;
 }
