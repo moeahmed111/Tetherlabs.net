@@ -639,20 +639,21 @@
     <script>
         // Hide sticky CTA when any other CTA is visible or nearby
         const stickyCta = document.getElementById('sticky-mobile-cta');
-        const ctaTargets = ['.hero-cta', '.mid-cta-section', '#contact'];
         if (stickyCta) {
-            let visibleCount = 0;
-            const observer = new IntersectionObserver(
-                (entries) => {
-                    entries.forEach(entry => {
-                        visibleCount += entry.isIntersecting ? 1 : -1;
-                    });
-                    stickyCta.classList.toggle('sticky-mobile-cta--hidden', visibleCount > 0);
-                },
-                { threshold: 0.15, rootMargin: '0px 0px -60px 0px' }
-            );
-            ctaTargets.forEach(sel => {
-                const el = document.querySelector(sel);
+            const visible = new Set();
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        visible.add(entry.target);
+                    } else {
+                        visible.delete(entry.target);
+                    }
+                });
+                stickyCta.classList.toggle('sticky-mobile-cta--hidden', visible.size > 0);
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+            ['.hero-cta', '.mid-cta-section', '#contact'].forEach(function(sel) {
+                var el = document.querySelector(sel);
                 if (el) observer.observe(el);
             });
         }
