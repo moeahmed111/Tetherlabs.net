@@ -630,6 +630,23 @@
         </div>
     </footer>
 
+    <!-- Sticky Mobile CTA -->
+    <div class="sticky-mobile-cta" id="sticky-mobile-cta">
+        <a href="https://tally.so/r/kdeVDe" target="_blank" class="btn-primary">Schedule a Strategy Call</a>
+    </div>
+
     <script src="script.js"></script>
+    <script>
+        // Hide sticky CTA when contact section is visible
+        const stickyCta = document.getElementById('sticky-mobile-cta');
+        const contactSection = document.getElementById('contact');
+        if (stickyCta && contactSection) {
+            const observer = new IntersectionObserver(
+                ([entry]) => { stickyCta.classList.toggle('sticky-mobile-cta--hidden', entry.isIntersecting); },
+                { threshold: 0.1 }
+            );
+            observer.observe(contactSection);
+        }
+    </script>
 </body>
 </html>

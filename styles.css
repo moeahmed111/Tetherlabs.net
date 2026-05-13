@@ -1480,6 +1480,10 @@ strong {
 
 .cmp-col--tether {
     color: var(--color-text);
+    background: rgba(34, 211, 238, 0.04);
+    border: 1px solid rgba(34, 211, 238, 0.1);
+    border-radius: 8px;
+    padding: 10px 12px;
 }
 
 .cmp-text {
@@ -1631,6 +1635,42 @@ strong {
 
 .contact-cta .btn-primary.large:hover {
     box-shadow: 0 8px 40px rgba(34, 211, 238, 0.55);
+}
+
+/* ============================================
+   STICKY MOBILE CTA
+   ============================================ */
+.sticky-mobile-cta {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .sticky-mobile-cta {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 998;
+        padding: 14px 20px;
+        background: rgba(10, 15, 30, 0.97);
+        border-top: 1px solid rgba(34, 211, 238, 0.2);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        justify-content: center;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .sticky-mobile-cta--hidden {
+        transform: translateY(100%);
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .sticky-mobile-cta .btn-primary {
+        width: 100%;
+        max-width: 420px;
+    }
 }
 
 /* ============================================
